@@ -9,10 +9,9 @@ export default function MovieListsItem({ listType }) {
   useEffect(() => {
     async function getMovieList() {
       try {
-        const data = await movieApi.getMovies({ listType });
+        const data = await movieApi.getMovies(listType);
         setMovieList(data);
       } catch (err) {
-        console.log("api 에러!!!!!!!!!!!");
         console.error(err);
       } finally {
       }
@@ -20,21 +19,29 @@ export default function MovieListsItem({ listType }) {
     getMovieList();
   });
 
-  // const movieItems = movieList.map((movieItem) => {
-  //   return (
-  //     <li key={movieItem.id}>
-  //       <MovieItem
-  //         title={movieItem.title}
-  //         content={movieItem.overview}
-  //       ></MovieItem>
-  //     </li>
-  //   );
-  // });
+  if (!movieList) {
+    return <div>로딩중</div>;
+  }
+
+  let count = 0;
+  const movieItems = movieList.map((movieItem) => {
+    if (count < 5) {
+      count += 1;
+      return (
+        <li key={movieItem.id}>
+          <MovieItem
+            title={movieItem.title}
+            content={movieItem.overview}
+          ></MovieItem>
+        </li>
+      );
+    }
+  });
 
   return (
     <section>
-      {/* <h3>{listType}</h3>
-      <ul>{movieItems}</ul> */}
+      <h3>{listType}</h3>
+      <ul>{movieItems}</ul>
     </section>
   );
 }
