@@ -17,26 +17,20 @@ export default function MakeItem({ listType, count }) {
       }
     }
     getMovieList();
-  });
+  }, []);
 
   if (!movieList) {
-    return <div>로딩중</div>;
+    return <div>로딩 중</div>;
   }
 
   let cnt = 0;
   const movieItems = movieList.map((movieItem) => {
     if (cnt < count) {
       cnt += 1;
-      const { id, title, overview, poster_path } = movieItem;
 
       return (
-        <li key={id}>
-          <MovieItem
-            movieId={id}
-            title={title}
-            content={overview}
-            poster_path={poster_path}
-          ></MovieItem>
+        <li key={movieItem.id}>
+          <MovieItem movieItem={movieItem}></MovieItem>
         </li>
       );
     }

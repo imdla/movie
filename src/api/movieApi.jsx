@@ -9,13 +9,8 @@ const movieApi = {
   // 2. 개별 GET
   getMovieById: async (movieId) => {
     const response = await api.get(`/${movieId}`);
-    return response.data.results;
+    return response.data;
   },
-  // 3. POST
-  // createPost: async (formData) => {
-  //   const response = await api.post("", formData);
-  //   return response.data;
-  // },
 };
 
 export default movieApi;
