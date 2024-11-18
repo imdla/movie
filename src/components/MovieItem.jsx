@@ -1,12 +1,15 @@
 import React from "react";
 import imgUrl from "../utills/imgUrl";
+import { Link } from "react-router-dom";
 
-export default function MovieItem({ title, content, poster_path }) {
+export default function MovieItem({ movieId, title, content, poster_path }) {
   return (
     <>
-      <h4>{title}</h4>
-      <p>{content}</p>
-      <img src={`${imgUrl()}${poster_path}`} alt="" />
+      <Link to={`/movie/detail/${movieId}`}>
+        <h4>{title}</h4>
+        <p>{content}</p>
+        <img src={`${imgUrl()}${poster_path}`} alt="" />
+      </Link>
     </>
   );
 }

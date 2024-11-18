@@ -32,6 +32,7 @@ export default function MakeItem({ listType, count }) {
       return (
         <li key={id}>
           <MovieItem
+            movieId={id}
             title={title}
             content={overview}
             poster_path={poster_path}
