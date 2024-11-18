@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import movieApi from "../api/movieApi";
 import { useParams } from "react-router-dom";
+import movieApi from "../api/movieApi";
 import imgUrl from "../utills/imgUrl";
 
 export default function MovieDetail() {
