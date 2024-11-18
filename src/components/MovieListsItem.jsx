@@ -25,7 +25,7 @@ export default function MovieListsItem({ listType }) {
 
   let count = 0;
   const movieItems = movieList.map((movieItem) => {
-    if (count < 5) {
+    if (count < 3) {
       count += 1;
       return (
         <li key={movieItem.id}>
