@@ -27,21 +27,25 @@ export default function MovieListsItem({ listType }) {
   const movieItems = movieList.map((movieItem) => {
     if (count < 3) {
       count += 1;
-      const { id, title, overview } = movieItem;
+      const { id, title, overview, poster_path } = movieItem;
 
       return (
         <li key={id}>
-          <MovieItem title={title} content={overview}></MovieItem>
+          <MovieItem
+            title={title}
+            content={overview}
+            poster_path={poster_path}
+          ></MovieItem>
         </li>
       );
     }
   });
 
   return (
-    <section>
+    <>
       <h3>{listType}</h3>
       <button>더보기</button>
       <ul>{movieItems}</ul>
-    </section>
+    </>
   );
 }

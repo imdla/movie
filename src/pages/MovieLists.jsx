@@ -5,9 +5,9 @@ export default function MovieLists() {
 
   const movieTypes = types.map((type) => {
     return (
-      <>
+      <section key={type}>
         <MovieListsItem listType={type}></MovieListsItem>
-      </>
+      </section>
     );
   });
 
