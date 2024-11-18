@@ -2,6 +2,7 @@ import React from "react";
 import MovieItem from "../components/MovieItem";
 import { useEffect, useState } from "react";
 import movieApi from "../api/movieApi";
+import { Link } from "react-router-dom";
 
 export default function MovieListsItem({ listType }) {
   const [movieList, setMovieList] = useState();
@@ -42,7 +43,7 @@ export default function MovieListsItem({ listType }) {
   });
 
   function handleClick() {
-    
+    return <Link to={`/movie/${listType}`} />;
   }
 
   return (
