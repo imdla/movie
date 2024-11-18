@@ -1,10 +1,11 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import Header from "../components/Header";
 
 export default function RootLayout() {
   return (
     <>
-      <header>헤더</header>
+      <Header></Header>
       <Outlet></Outlet>
       <footer>푸터</footer>
     </>
