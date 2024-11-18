@@ -6,8 +6,8 @@ export default function MovieType() {
 
   return (
     <>
-      <div>MovieType</div>
-      <p>{listType}</p>
+      <h2>Movie Type - {listType}</h2>
+      
     </>
   );
 }
