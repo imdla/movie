@@ -3,6 +3,7 @@ import RootLayout from "../layout/RootLayout";
 import Login from "../pages/Login";
 import MyPage from "../pages/MyPage";
 import MainLayout from "../layout/MainLayout";
+import MovieLists from "../components/MovieLists";
 
 const router = createBrowserRouter([
   {
@@ -10,16 +11,22 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       {
+        path: "/",
+        element: <MainLayout />,
+        children: [
+          {
+            path: "/movieLists",
+            element: <MovieLists />,
+          },
+        ],
+      },
+      {
         path: "/login",
         element: <Login />,
       },
       {
         path: "/mypage",
         element: <MyPage />,
-      },
-      {
-        index: true,
-        element: <MainLayout />,
       },
     ],
   },
