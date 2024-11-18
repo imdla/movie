@@ -1,15 +1,12 @@
 import React from "react";
+import MovieListsItem from "./MovieListsItem";
 
 export default function MovieLists() {
   return (
-    <section>
-      <h3>now playing</h3>
-      <ul>
-        <li>
-          <h4>title</h4>
-          <p>content</p>
-        </li>
-      </ul>
-    </section>
+    <>
+      <MovieListsItem></MovieListsItem>
+      <MovieListsItem></MovieListsItem>
+      <MovieListsItem></MovieListsItem>
+    </>
   );
 }
