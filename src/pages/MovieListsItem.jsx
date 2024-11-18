@@ -41,10 +41,14 @@ export default function MovieListsItem({ listType }) {
     }
   });
 
+  function handleClick() {
+    
+  }
+
   return (
     <>
       <h3>{listType}</h3>
-      <button>더보기</button>
+      <button onClick={handleClick}>더보기</button>
       <ul>{movieItems}</ul>
     </>
   );

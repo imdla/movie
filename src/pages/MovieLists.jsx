@@ -11,7 +11,5 @@ export default function MovieLists() {
     );
   });
 
-  const type = "now_playing";
-
   return <>{movieTypes}</>;
 }
