@@ -1,4 +1,4 @@
-import MovieListsItem from "../components/MovieListsItem";
+import MovieListsItem from "./MovieListsItem";
 
 export default function MovieLists() {
   const types = ["now_playing", "popular", "top_rated"];
