@@ -12,16 +12,15 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       {
-        path: "/",
+        index: true,
         element: <MainLayout />,
-        children: [
-          {
-            path: "/",
-            element: <MovieLists />,
-            children: [{ path: "/movie/:listType", element: <MovieType /> }],
-          },
-        ],
       },
+      {
+        path: "/movie",
+        element: <MovieLists />,
+        children: [{ path: "/movie/second", element: <MovieType /> }],
+      },
+
       {
         path: "/login",
         element: <Login />,
