@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import movieApi from "../api/movieApi";
 import imgUrl from "../utills/imgUrl";
+import MovieReviews from "./MovieReviews";
 
 export default function MovieDetail() {
   const { movieId } = useParams();
   const [movieItem, setMovieItem] = useState();
-  const [movieItemReviews, setMovieItemReviews] = useState();
 
   useEffect(() => {
     async function getMovieById() {
@@ -22,19 +22,6 @@ export default function MovieDetail() {
     getMovieById();
   }, []);
 
-  useEffect(() => {
-    async function getMovieByIdReview() {
-      try {
-        const data = await movieApi.getMovieByIdReview(movieId);
-        setMovieItemReviews(data);
-      } catch (err) {
-        console.error(err);
-      } finally {
-      }
-    }
-    getMovieByIdReview();
-  }, []);
-
   if (!movieItem) {
     return <div>로딩 중</div>;
   }
@@ -42,33 +29,6 @@ export default function MovieDetail() {
   const { title, vote_average, overview, poster_path, genres } = movieItem;
   const genre = genres.map((obj) => {
     return <li key={obj.id}>{obj.name}</li>;
-  });
-
-  let cnt = 0;
-  const moveReviews = movieItemReviews.map((movieReview) => {
-    if (cnt < 5) {
-      cnt += 1;
-      const { author, rating, content, author_details } = movieReview;
-
-      return (
-        <li>
-          {author_details.avatar_path ? (
-            <img src={`${imgUrl()}${author_details.avatar_path}`} alt="" />
-          ) : (
-            <img
-              src="https://plus.unsplash.com/premium_photo-1682309735318-934795084028?q=80&w=1824&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt=""
-            />
-          )}
-
-          <div>
-            <p>{author}</p>
-            <p>{rating}</p>
-            <p>{content}</p>
-          </div>
-        </li>
-      );
-    }
   });
 
   return (
@@ -88,7 +48,9 @@ export default function MovieDetail() {
             <ul>{genre}</ul>
           </li>
         </ul>
-        <ul>{moveReviews}</ul>
+        <ul>
+          <MovieReviews count={5}></MovieReviews>
+        </ul>
       </div>
     </>
   );
