@@ -5,6 +5,7 @@ import MyPage from "../pages/MyPage";
 import MainLayout from "../layout/MainLayout";
 import MovieLists from "../pages/MovieLists";
 import MovieType from "../pages/MovieType";
+import MovieDetail from "../pages/MovieDetail";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/movie/:listType",
         element: <MovieType />,
+      },
+      {
+        path: "/movie/:movieId",
+        element: <MovieDetail />,
       },
       {
         path: "/login",
