@@ -5,12 +5,17 @@ import { useSelector } from "react-redux";
 import MovieReviews from "./MovieReviews";
 import movieApi from "../api/movieApi";
 import imgUrl from "../utills/imgUrl";
+import { useDispatch } from "react-redux";
+import { saved, notSaved } from "../store/slices/movieSaveSlice";
 
 export default function MovieDetail() {
-  const navigate = useNavigate();
-  const { movieId } = useParams();
   const [movieItem, setMovieItem] = useState();
+  const [isSaved, setIsSaved] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { movieId } = useParams();
   const { isLoggedIn } = useSelector((state) => state.auth);
+  const { saveMovieId } = useSelector((state) => state.movieSave);
 
   useEffect(() => {
     async function getMovieById() {
@@ -25,6 +30,14 @@ export default function MovieDetail() {
     getMovieById();
   }, []);
 
+  useEffect(() => {
+    let saveValue = saveMovieId.find((id) => {
+      return id === movieId;
+    });
+
+    setIsSaved(saveValue ? true : false);
+  }, [isSaved]);
+
   if (!movieItem) {
     return <div>로딩 중</div>;
   }
@@ -36,8 +49,16 @@ export default function MovieDetail() {
 
   function handleClick() {
     if (isLoggedIn) {
-      alert("MY PAGE에 저장되었습니다.");
-      navigate("/mypage");
+      // 클릭한 poster.id 가져와 movieSave의 id와 비교
+      if (isSaved) {
+        dispatch(notSaved());
+        setIsSaved(false);
+      } else {
+        dispatch(saved());
+        setIsSaved(true);
+        alert("MY PAGE에 저장되었습니다.");
+        // navigate("/mypage");
+      }
     } else {
       alert("로그인 후 이용 가능합니다.");
     }
@@ -49,7 +70,7 @@ export default function MovieDetail() {
       <img src={`${imgUrl()}${poster_path}`} alt="" />
       <div>
         <h3>{title}</h3>
-        <button onClick={handleClick}>저장</button>
+        <button onClick={handleClick}>{isSaved ? "저장 안함" : "저장"}</button>
         <ul>
           <li>
             <p>평점 : {vote_average}</p>

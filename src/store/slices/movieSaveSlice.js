@@ -1,21 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [
-  {
-    isSaved: false,
-    movieId: "",
-  },
-];
+const initialState = {
+  saveMovieId: ["912649"],
+};
 
 const movieSaveSlice = createSlice({
   name: "movieSave",
   initialState,
   reducers: {
-    saved: (state, actions) => {
-      state.isSaved = true;
+    saved: (state, action) => {
+      state.saveMovieId.push(action.payload);
     },
-    notSaved: (state, actions) => {
-      state.isSaved = false;
+    notSaved: (state, action) => {
+      state.saveMovieId.pop(action.payload);
     },
   },
 });
