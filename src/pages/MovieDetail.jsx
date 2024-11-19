@@ -1,11 +1,10 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import MovieReviews from "./MovieReviews";
 import movieApi from "../api/movieApi";
 import imgUrl from "../utills/imgUrl";
-import { useDispatch } from "react-redux";
 import { saved, remove } from "../store/slices/movieSaveSlice";
 
 export default function MovieDetail() {
@@ -56,7 +55,7 @@ export default function MovieDetail() {
         dispatch(saved(movieId));
         setIsSaved(true);
         alert("MY PAGE에 저장되었습니다.");
-        // navigate("/mypage");
+        navigate("/mypage");
       }
     } else {
       alert("로그인 후 이용 가능합니다.");

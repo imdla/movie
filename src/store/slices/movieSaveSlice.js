@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  saveMovieId: ["912649"],
+  saveMovieId: [],
 };
 
 const movieSaveSlice = createSlice({
