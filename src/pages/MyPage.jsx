@@ -27,7 +27,8 @@ export default function MyPage() {
       //   const movieItem = await movieApi.getMovieById(id);
       //   setMovieItems([...movieItems, movieItem]);
       // });
-      async function func(params) {
+
+      async function func() {
         const savedMovies = [];
         for (let movieId of saveMovieId) {
           const movieItem = await movieApi.getMovieById(movieId);
@@ -45,7 +46,7 @@ export default function MyPage() {
 
   const movieSaveItems = movieItems.map((item) => {
     return (
-      <li key={item.id}>
+      <li key={item.imdb_id}>
         <MovieItem movieItem={item}></MovieItem>
       </li>
     );
@@ -55,9 +56,7 @@ export default function MyPage() {
     <>
       <h2>My Favorite Movie Page</h2>
       <div>
-        <ul>
-          <li>{movieSaveItems}</li>
-        </ul>
+        <ul>{movieSaveItems}</ul>
       </div>
     </>
   );
