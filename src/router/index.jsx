@@ -7,7 +7,6 @@ import MovieLists from "../pages/MovieLists";
 import MovieType from "../pages/MovieType";
 import MovieDetail from "../pages/MovieDetail";
 import MovieReviews from "../pages/MovieReviews";
-import RequestLogin from "../pages/RequestLogin";
 
 const router = createBrowserRouter([
   {
@@ -37,12 +36,6 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
-        children: [
-          {
-            path: "/login/request",
-            element: <RequestLogin />,
-          },
-        ],
       },
       {
         path: "/mypage",
