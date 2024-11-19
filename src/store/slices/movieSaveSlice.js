@@ -11,11 +11,11 @@ const movieSaveSlice = createSlice({
     saved: (state, action) => {
       state.saveMovieId.push(action.payload);
     },
-    notSaved: (state, action) => {
+    remove: (state, action) => {
       state.saveMovieId.pop(action.payload);
     },
   },
 });
 
-export const { saved, notSaved } = movieSaveSlice.actions;
+export const { saved, remove } = movieSaveSlice.actions;
 export default movieSaveSlice.reducer;

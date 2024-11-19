@@ -6,11 +6,11 @@ import MovieReviews from "./MovieReviews";
 import movieApi from "../api/movieApi";
 import imgUrl from "../utills/imgUrl";
 import { useDispatch } from "react-redux";
-import { saved, notSaved } from "../store/slices/movieSaveSlice";
+import { saved, remove } from "../store/slices/movieSaveSlice";
 
 export default function MovieDetail() {
   const [movieItem, setMovieItem] = useState();
-  const [isSaved, setIsSaved] = useState(false);
+  const [isSaved, setIsSaved] = useState();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { movieId } = useParams();
@@ -49,12 +49,11 @@ export default function MovieDetail() {
 
   function handleClick() {
     if (isLoggedIn) {
-      // 클릭한 poster.id 가져와 movieSave의 id와 비교
       if (isSaved) {
-        dispatch(notSaved());
+        dispatch(remove(movieId));
         setIsSaved(false);
       } else {
-        dispatch(saved());
+        dispatch(saved(movieId));
         setIsSaved(true);
         alert("MY PAGE에 저장되었습니다.");
         // navigate("/mypage");
