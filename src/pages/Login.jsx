@@ -10,10 +10,6 @@ export default function Login() {
   const [formData, setFormData] = useState({ name: "", password: "" });
   const { isLoggedIn, authName, authPw } = useSelector((state) => state.auth);
 
-  // function handleClick() {
-  //   isLoggedIn ? dispatch(logout()) : dispatch(login());
-  // }
-
   function handleChange(e) {
     return setFormData({ ...formData, [e.target.name]: e.target.value });
   }
@@ -22,10 +18,17 @@ export default function Login() {
     e.preventDefault();
     const { name, password } = formData;
 
-    if (isLoggedIn) dispatch(logout());
+    if (isLoggedIn) {
+      dispatch(logout());
+    }
 
-    if (!isLoggedIn && authName === name && authPw === password) {
-      dispatch(login());
+    if (!isLoggedIn) {
+      if (authName === name && authPw === password) {
+        dispatch(login());
+        navigate("/");
+      } else {
+        alert("아이디나 비밀번호가 올바르지 않습니다.");
+      }
     }
   }
 
