@@ -63,29 +63,33 @@ export default function MovieDetail() {
   }
 
   return (
-    <>
+    <div className="container">
       <h2>Movie Detail</h2>
-      <img src={`${imgUrl()}${poster_path}`} alt="" />
-      <div>
-        <h3>{title}</h3>
-        <button onClick={handleClick}>{isSaved ? "저장 안함" : "저장"}</button>
-        <ul>
-          <li>
-            <p>평점 : {vote_average}</p>
-          </li>
-          <li>
-            <p>{overview}</p>
-          </li>
-          <li>
-            <ul>{genre}</ul>
-          </li>
-        </ul>
+      <div className="flex-center">
+        <img src={`${imgUrl()}${poster_path}`} alt="" />
+        <div>
+          <h3>{title}</h3>
+          <button onClick={handleClick}>
+            {isSaved ? "저장 안함" : "저장"}
+          </button>
+          <ul>
+            <li>
+              <p>평점 : {vote_average}</p>
+            </li>
+            <li>
+              <p>{overview}</p>
+            </li>
+            <li>
+              <ul>{genre}</ul>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <h2>Movie Review</h2>
       <ul>
         <MovieReviews count={5}></MovieReviews>
       </ul>
-    </>
+    </div>
   );
 }

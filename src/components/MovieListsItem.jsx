@@ -11,7 +11,7 @@ export default function MovieListsItem({ listType }) {
     <>
       <h3>{listType}</h3>
       <button onClick={() => navigate(`/movie/${listType}`)}>더보기</button>
-      <ul>{movieItems}</ul>
+      <ul className="ulTag">{movieItems}</ul>
     </>
   );
 }

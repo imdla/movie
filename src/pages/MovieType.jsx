@@ -7,9 +7,9 @@ export default function MovieType() {
   let movieItems = <MakeItem listType={listType} count={10}></MakeItem>;
 
   return (
-    <>
+    <div className="container movieType">
       <h2>Movie Type - {listType}</h2>
-      {movieItems}
-    </>
+      <ul className="ulTag flex-center flex-wrap">{movieItems}</ul>
+    </div>
   );
 }

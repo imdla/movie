@@ -8,11 +8,11 @@ export default function Header() {
   return (
     <header>
       <div>
-        <h1>Movie Page</h1>
+        <h1 className="text-center">Movie Page</h1>
       </div>
 
       <nav>
-        <ul>
+        <ul className="ulTag flex-center">
           <li>
             <Link to={"/"}>
               <h2>HOME</h2>

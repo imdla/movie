@@ -53,11 +53,11 @@ export default function MyPage() {
   });
 
   return (
-    <>
+    <div className="container">
       <h2>My Favorite Movie Page</h2>
       <div>
-        <ul>{movieSaveItems}</ul>
+        <ul className="ulTag movieList">{movieSaveItems}</ul>
       </div>
-    </>
+    </div>
   );
 }

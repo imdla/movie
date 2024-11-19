@@ -7,9 +7,11 @@ export default function MovieItem({ movieItem }) {
   return (
     <>
       <Link to={`/movie/detail/${id}`}>
-        <h4>{title}</h4>
-        <p>{overview}</p>
         <img src={`${imgUrl()}${poster_path}`} alt="" />
+        <div>
+          <h4>{title}</h4>
+          <p>{overview}</p>
+        </div>
       </Link>
     </>
   );

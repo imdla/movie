@@ -66,3 +66,88 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.text-center {
+  text-align: center;
+}
+
+a {
+  color: #dcdcdc;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.container {
+  padding: 1rem;
+  width: 96vw;
+}
+
+.ulTag {
+  display: flex;
+  list-style-type: none;
+}
+
+.ulTag li {
+  margin-right: 2rem;
+}
+
+.movieList li {
+  width: 200px;
+}
+
+.ulTag p {
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  height: 54px;
+}
+
+.movieType .ulTag a {
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.reviewImg {
+  width: 230px;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: lightskyblue;
+  color: black;
+}
+
+.marginBttom {
+  margin-bottom: 1rem;
+}
+
+.marginTop {
+  margin-top: 2rem;
+}
+
+form input {
+  width: 200px;
+  height: 28px;
+}
+
