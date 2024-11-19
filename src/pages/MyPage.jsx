@@ -15,7 +15,7 @@ export default function MyPage() {
   useEffect(() => {
     if (!isLoggedIn) {
       alert("로그인이 필요합니다.");
-      navigate("/login/request");
+      navigate("/login");
     }
   }, [isLoggedIn]);
 
