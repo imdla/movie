@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { login, logout } from "../store/slices/authSlice";
-import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({ name: "", password: "" });
   const { isLoggedIn, authName, authPw } = useSelector((state) => state.auth);
 
@@ -20,9 +20,7 @@ export default function Login() {
 
     if (isLoggedIn) {
       dispatch(logout());
-    }
-
-    if (!isLoggedIn) {
+    } else {
       if (authName === name && authPw === password) {
         dispatch(login());
         navigate("/");
