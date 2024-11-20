@@ -2,16 +2,19 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { saved, remove } from "../store/slices/movieSaveSlice";
 import MovieReviews from "./MovieReviews";
+import Loading from "./Loading";
 import movieApi from "../api/movieApi";
 import imgUrl from "../utills/imgUrl";
-import { saved, remove } from "../store/slices/movieSaveSlice";
+import { reviewAmount } from "../utills/movieInfo";
 
 export default function MovieDetail() {
-  const [movieItem, setMovieItem] = useState();
-  const [isSaved, setIsSaved] = useState();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [movieItem, setMovieItem] = useState();
+  const [isSaved, setIsSaved] = useState();
+  const [loading, setLoading] = useState(true);
   const { movieId } = useParams();
   const { isLoggedIn } = useSelector((state) => state.auth);
   const { saveMovieId } = useSelector((state) => state.movieSave);
@@ -23,7 +26,9 @@ export default function MovieDetail() {
         setMovieItem(data);
       } catch (err) {
         console.error(err);
+        navigate("/notfound", { replace: true });
       } finally {
+        setLoading(false);
       }
     }
     getMovieById();
@@ -34,16 +39,16 @@ export default function MovieDetail() {
       return id === movieId;
     });
 
-    setIsSaved(saveValue ? true : false);
+    setIsSaved(isLoggedIn && saveValue ? true : false);
   }, [isSaved]);
 
-  if (!movieItem) {
-    return <div>로딩 중</div>;
+  if (loading) {
+    return <Loading></Loading>;
   }
 
   const { title, vote_average, overview, poster_path, genres } = movieItem;
-  const genre = genres.map((obj) => {
-    return <li key={obj.id}>{obj.name}</li>;
+  const genreItem = genres.map((genre) => {
+    return <li key={genre.id}>{genre.name}</li>;
   });
 
   function handleClick() {
@@ -74,13 +79,21 @@ export default function MovieDetail() {
           </button>
           <ul>
             <li>
-              <p>평점 : {vote_average}</p>
+              <p>
+                <b>Vote</b> : {vote_average}
+              </p>
             </li>
             <li>
+              <p>
+                <b>Overview</b>
+              </p>
               <p>{overview}</p>
             </li>
             <li>
-              <ul>{genre}</ul>
+              <p>
+                <b>Genre</b>
+              </p>
+              <ul>{genreItem}</ul>
             </li>
           </ul>
         </div>
@@ -88,7 +101,7 @@ export default function MovieDetail() {
 
       <h2>Movie Review</h2>
       <ul>
-        <MovieReviews count={5}></MovieReviews>
+        <MovieReviews count={reviewAmount}></MovieReviews>
       </ul>
     </div>
   );

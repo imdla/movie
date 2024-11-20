@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import movieApi from "../api/movieApi";
 import imgUrl from "../utills/imgUrl";
+import { reviewBasicImgUrl } from "../utills/movieInfo";
 
 export default function MovieReviews({ count }) {
   const { movieId } = useParams();
@@ -29,7 +30,7 @@ export default function MovieReviews({ count }) {
   const moveReviews = movieItemReviews.map((movieReview) => {
     if (cnt < count) {
       cnt += 1;
-      const { id, author, rating, content, author_details } = movieReview;
+      const { id, author, content, author_details } = movieReview;
 
       return (
         <li className="ulTag marginBttom" key={id}>
@@ -40,16 +41,11 @@ export default function MovieReviews({ count }) {
               alt=""
             />
           ) : (
-            <img
-              className="reviewImg"
-              src="https://plus.unsplash.com/premium_photo-1682309735318-934795084028?q=80&w=1824&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt=""
-            />
+            <img className="reviewImg" src={reviewBasicImgUrl} alt="" />
           )}
 
           <div>
             <h3>{author}</h3>
-            <p>{rating}</p>
             <p>{content}</p>
           </div>
         </li>
