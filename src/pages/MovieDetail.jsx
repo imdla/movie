@@ -8,6 +8,7 @@ import Loading from "./Loading";
 import movieApi from "../api/movieApi";
 import imgUrl from "../utills/imgUrl";
 import { reviewAmount } from "../utills/movieInfo";
+import SaveButton from "../components/SaveButton";
 
 export default function MovieDetail() {
   const navigate = useNavigate();
@@ -51,22 +52,6 @@ export default function MovieDetail() {
     return <li key={genre.id}>{genre.name}</li>;
   });
 
-  function handleClick() {
-    if (isLoggedIn) {
-      if (isSaved) {
-        dispatch(remove(movieId));
-        setIsSaved(false);
-      } else {
-        dispatch(saved(movieId));
-        setIsSaved(true);
-        alert("MY PAGE에 저장되었습니다.");
-        navigate("/mypage");
-      }
-    } else {
-      alert("로그인 후 이용 가능합니다.");
-    }
-  }
-
   return (
     <div className="container">
       <h2>Movie Detail</h2>
@@ -74,9 +59,11 @@ export default function MovieDetail() {
         <img src={`${imgUrl()}${poster_path}`} alt="" />
         <div>
           <h3>{title}</h3>
-          <button onClick={handleClick}>
-            {isSaved ? "저장 안함" : "저장"}
-          </button>
+          <SaveButton
+            isSaved={isSaved}
+            setIsSaved={setIsSaved}
+            movieId={movieId}
+          ></SaveButton>
           <ul>
             <li>
               <p>
