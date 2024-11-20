@@ -11,15 +11,14 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  height: 100vh;
 }
 
 a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
 }
 
 body {
@@ -38,7 +37,7 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.4em 0.8em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
@@ -47,7 +46,8 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  background-color: #de2a60;
+  transition: all 0.5s;
 }
 button:focus,
 button:focus-visible {
@@ -94,22 +94,27 @@ a {
   flex-direction: column;
 }
 
+.justy-start {
+  justify-content: flex-start;
+}
+
+.justy-between {
+  justify-content: space-between;
+}
+
 .container {
-  padding: 1rem;
+  padding: 2rem;
   width: 96vw;
 }
 
 .ulTag {
   display: flex;
   list-style-type: none;
+  padding: 0;
 }
 
 .ulTag li {
   margin-right: 2rem;
-}
-
-.movieList li {
-  width: 200px;
 }
 
 .ulTag p {
@@ -140,8 +145,9 @@ img {
 }
 
 button {
-  background-color: lightskyblue;
-  color: black;
+  font-weight: bold;
+  background-color: #f82f62;
+  border-radius: 20px;
 }
 
 .marginBttom {
@@ -155,4 +161,92 @@ button {
 form input {
   width: 200px;
   height: 28px;
+}
+
+.h100 {
+  height: 100vh;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+/* header */
+header {
+  border-bottom: 1px solid #333;
+}
+
+header nav h4 {
+  width: 92px;
+  height: 38px;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 38px;
+  margin: 0;
+}
+
+header nav h4:hover {
+  background-color: #333;
+  transition: all ease-in-out 0.5s;
+}
+
+.myPage {
+  background-color: #f82f62;
+}
+
+.myPage:hover {
+  background-color: #de2a60;
+}
+
+/* movieList */
+.movieList {
+  position: relative;
+}
+
+.movieList .arrow {
+  position: absolute;
+  top: 40%;
+  filter: hue-rotate(180deg) brightness(3.2);
+}
+
+.movieList .arrow.left {
+  left: -50px;
+  rotate: 180deg;
+}
+
+.movieList .arrow.right {
+  right: 0;
+}
+
+.movieList .arrow:hover {
+  filter: hue-rotate(180deg) brightness(1.2);
+  transition: all ease-in-out 0.5;
+}
+
+.movieList li {
+  width: 200px;
+}
+
+.typeTitle {
+  margin-right: 1rem;
+}
+
+.typeContent {
+  width: 100vw;
+  padding: 0 2rem;
+  overflow: scroll;
+}
+
+.typeContent li {
+  position: relative;
+}
+
+.typeContent p {
+  display: none;
+}
+
+.typeContent .grade {
+  position: absolute;
+  top: 230px;
+  left: -2px;
 }

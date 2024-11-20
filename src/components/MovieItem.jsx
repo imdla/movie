@@ -10,7 +10,7 @@ export default function MovieItem({ movieItem }) {
       <Link to={`/movie/detail/${id}`}>
         <img src={`${imgUrl()}${poster_path}`} alt="" />
         <div>
-          <h4>{title}</h4>
+          <h3>{title}</h3>
           <p>{overview}</p>
         </div>
       </Link>

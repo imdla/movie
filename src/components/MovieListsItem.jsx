@@ -10,9 +10,13 @@ export default function MovieListsItem({ listType }) {
 
   return (
     <>
-      <h3>{listType}</h3>
-      <button onClick={() => navigate(`/movie/${listType}`)}>더보기</button>
-      <ul className="ulTag">{movieItems}</ul>
+      <div className="flex-center justy-start">
+        <h3 className="typeTitle">
+          {listType.replace("_", " ").toUpperCase()}
+        </h3>
+        <button onClick={() => navigate(`/movie/${listType}`)}>더보기</button>
+      </div>
+      <ul className="ulTag typeContent">{movieItems}</ul>
     </>
   );
 }

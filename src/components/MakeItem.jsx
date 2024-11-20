@@ -37,6 +37,7 @@ export default function MakeItem({ listType, count }) {
 
       return (
         <li key={movieItem.id}>
+          <h1 className="grade">{cnt}</h1>
           <MovieItem movieItem={movieItem}></MovieItem>
         </li>
       );
