@@ -1,10 +1,9 @@
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import movieApi from "../api/movieApi";
 import MovieItem from "../components/MovieItem";
-import { useState } from "react";
 
 export default function MyPage() {
   const navigate = useNavigate();
@@ -20,16 +19,10 @@ export default function MyPage() {
   }, [isLoggedIn]);
 
   useEffect(() => {
-    console.log(saveMovieId);
-
     function getMovieSaveItems() {
-      // saveMovieId.map(async (id) => {
-      //   const movieItem = await movieApi.getMovieById(id);
-      //   setMovieItems([...movieItems, movieItem]);
-      // });
-
       async function func() {
         const savedMovies = [];
+
         for (let movieId of saveMovieId) {
           const movieItem = await movieApi.getMovieById(movieId);
           savedMovies.push(movieItem);
@@ -41,8 +34,6 @@ export default function MyPage() {
 
     getMovieSaveItems();
   }, [saveMovieId]);
-
-  console.log(movieItems);
 
   const movieSaveItems = movieItems.map((item) => {
     return (
@@ -56,7 +47,9 @@ export default function MyPage() {
     <div className="container">
       <h2>My Favorite Movie Page</h2>
       <div>
-        <ul className="ulTag movieList">{movieSaveItems}</ul>
+        <ul className="ulTag movieList">
+          {movieSaveItems && <p>현재 저장한 영화가 없습니다</p>}
+        </ul>
       </div>
     </div>
   );
