@@ -43,12 +43,16 @@ export default function MyPage() {
     );
   });
 
+  console.log(movieSaveItems);
+
   return (
     <div className="container">
       <h2>My Favorite Movie Page</h2>
       <div>
         <ul className="ulTag movieList">
-          {movieSaveItems && <p>현재 저장한 영화가 없습니다</p>}
+          {movieSaveItems
+            ? movieSaveItems
+            : console.log(<p>현재 저장한 영화가 없습니다</p>)}
         </ul>
       </div>
     </div>

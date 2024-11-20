@@ -52,7 +52,7 @@ export default function Login() {
 
         <button
           style={{
-            backgroundColor: isLoggedIn ? "gray" : "blue",
+            backgroundColor: isLoggedIn ? "#888" : "#f82f62",
           }}
         >
           {isLoggedIn ? "로그아웃" : "로그인"}

@@ -125,13 +125,6 @@ a {
   height: 54px;
 }
 
-.movieType .ulTag a {
-  display: block;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 img {
   margin-right: 1rem;
   margin-bottom: 1rem;
@@ -249,4 +242,32 @@ header nav h4:hover {
   position: absolute;
   top: 230px;
   left: -2px;
+}
+
+/* movieType */
+.movieType li {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.movieType .grade {
+  position: absolute;
+  top: -60px;
+  left: -12px;
+}
+
+.movieType .ulTag a {
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Login */
+form button {
+  border: none;
+  margin-top: 2rem;
+}
+form button:hover {
+  opacity: 0.5;
 }
