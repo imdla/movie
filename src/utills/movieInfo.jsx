@@ -1,5 +1,3 @@
-export function movieTypeList() {
-  const types = ["now_playing", "popular", "top_rated"];
+export const movieTypeList = ["now_playing", "popular", "top_rated"];
 
-  return types;
-}
+export const typeAmount = 15;
