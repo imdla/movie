@@ -67,6 +67,11 @@ button:focus-visible {
   }
 }
 
+footer {
+  padding: 1rem;
+  background-color: #555;
+}
+
 .text-center {
   text-align: center;
 }
