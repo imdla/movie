@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import movieApi from "../api/movieApi";
 import MovieItem from "../components/MovieItem";
+import EmptyMyPage from "../components/EmptyMyPage";
 
 export default function MyPage() {
   const navigate = useNavigate();
@@ -43,16 +44,12 @@ export default function MyPage() {
     );
   });
 
-  console.log(movieSaveItems);
-
   return (
-    <div className="container">
+    <div className="container myPageMovie">
       <h2>My Favorite Movie Page</h2>
       <div>
         <ul className="ulTag movieList">
-          {movieSaveItems
-            ? movieSaveItems
-            : console.log(<p>현재 저장한 영화가 없습니다</p>)}
+          {saveMovieId[0] ? movieSaveItems : <EmptyMyPage></EmptyMyPage>}
         </ul>
       </div>
     </div>

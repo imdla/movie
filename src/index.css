@@ -276,6 +276,7 @@ form button:hover {
 }
 
 /* notfound */
-.notfound img {
+.notfound img,
+.myPageMovie img {
   width: 200px;
 }
