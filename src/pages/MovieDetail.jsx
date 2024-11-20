@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 import movieApi from "../api/movieApi";
 import imgUrl from "../utills/imgUrl";
@@ -14,11 +14,10 @@ import MovieDetailInfo from "../components/MovieDetailInfo";
 
 export default function MovieDetail() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const { movieId } = useParams();
   const [movieItem, setMovieItem] = useState();
   const [isSaved, setIsSaved] = useState();
   const [loading, setLoading] = useState(true);
-  const { movieId } = useParams();
   const { isLoggedIn } = useSelector((state) => state.auth);
   const { saveMovieId } = useSelector((state) => state.movieSave);
 
@@ -68,10 +67,7 @@ export default function MovieDetail() {
         </div>
       </div>
 
-      <h2>Movie Review</h2>
-      <ul>
-        <MovieReviews count={reviewAmount}></MovieReviews>
-      </ul>
+      <MovieReviews count={reviewAmount}></MovieReviews>
     </div>
   );
 }

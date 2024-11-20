@@ -1,12 +1,17 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+
 import movieApi from "../api/movieApi";
 import imgUrl from "../utills/imgUrl";
 import { reviewBasicImgUrl } from "../utills/movieInfo";
 
+import Loading from "./Loading";
+
 export default function MovieReviews({ count }) {
+  const navigate = useNavigate();
   const { movieId } = useParams();
+  const [loading, setLoading] = useState(true);
   const [movieItemReviews, setMovieItemReviews] = useState();
 
   useEffect(() => {
@@ -16,14 +21,16 @@ export default function MovieReviews({ count }) {
         setMovieItemReviews(data);
       } catch (err) {
         console.error(err);
+        navigate("/notfound", { replace: true });
       } finally {
+        setLoading(false);
       }
     }
     getMovieByIdReview();
   }, []);
 
-  if (!movieItemReviews) {
-    return <div>로딩 중</div>;
+  if (loading) {
+    return <Loading></Loading>;
   }
 
   let cnt = 0;
@@ -32,17 +39,13 @@ export default function MovieReviews({ count }) {
       cnt += 1;
       const { id, author, content, author_details } = movieReview;
 
+      let imgSrc = author_details.avatar_path
+        ? `${imgUrl()}${author_details.avatar_path}`
+        : reviewBasicImgUrl;
+
       return (
         <li className="ulTag marginBttom" key={id}>
-          {author_details.avatar_path ? (
-            <img
-              className="reviewImg"
-              src={`${imgUrl()}${author_details.avatar_path}`}
-              alt=""
-            />
-          ) : (
-            <img className="reviewImg" src={reviewBasicImgUrl} alt="" />
-          )}
+          <img className="reviewImg" src={imgSrc} alt="" />
 
           <div>
             <h3>{author}</h3>
@@ -53,5 +56,10 @@ export default function MovieReviews({ count }) {
     }
   });
 
-  return <ul className="marginTop">{moveReviews}</ul>;
+  return (
+    <>
+      <h2>Movie Review</h2>
+      <ul className="marginTop">{moveReviews}</ul>
+    </>
+  );
 }
