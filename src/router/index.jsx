@@ -11,6 +11,7 @@ import MovieDetail from "../pages/MovieDetail";
 import MovieReviews from "../pages/MovieReviews";
 
 import NotFound from "../pages/NotFound";
+import Loading from "../pages/Loading";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
         element: <MyPage />,
       },
     ],
+  },
+  {
+    path: "/loading",
+    element: <Loading />,
   },
   {
     path: "/notfound",

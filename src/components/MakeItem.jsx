@@ -1,10 +1,14 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import movieApi from "../api/movieApi";
 import MovieItem from "./MovieItem";
+import Loading from "../pages/Loading";
 
 export default function MakeItem({ listType, count }) {
+  const navigate = useNavigate();
   const [movieList, setMovieList] = useState();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getMovieList() {
@@ -13,15 +17,17 @@ export default function MakeItem({ listType, count }) {
         setMovieList(data);
       } catch (err) {
         console.error(err);
-        alert('요청된 페이지가 없습니다.')
+        navigate("/notfound", { replace: true });
       } finally {
+        setLoading(false);
       }
     }
+
     getMovieList();
   }, []);
 
-  if (!movieList) {
-    return <div>로딩 중</div>;
+  if (loading) {
+    return <Loading></Loading>;
   }
 
   let cnt = 0;
