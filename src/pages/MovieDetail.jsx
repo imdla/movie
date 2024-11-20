@@ -2,13 +2,15 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { saved, remove } from "../store/slices/movieSaveSlice";
-import MovieReviews from "./MovieReviews";
-import Loading from "./Loading";
+
 import movieApi from "../api/movieApi";
 import imgUrl from "../utills/imgUrl";
 import { reviewAmount } from "../utills/movieInfo";
+
+import MovieReviews from "./MovieReviews";
+import Loading from "./Loading";
 import SaveButton from "../components/SaveButton";
+import MovieDetailInfo from "../components/MovieDetailInfo";
 
 export default function MovieDetail() {
   const navigate = useNavigate();
@@ -47,10 +49,7 @@ export default function MovieDetail() {
     return <Loading></Loading>;
   }
 
-  const { title, vote_average, overview, poster_path, genres } = movieItem;
-  const genreItem = genres.map((genre) => {
-    return <li key={genre.id}>{genre.name}</li>;
-  });
+  const { title, poster_path } = movieItem;
 
   return (
     <div className="container">
@@ -64,25 +63,8 @@ export default function MovieDetail() {
             setIsSaved={setIsSaved}
             movieId={movieId}
           ></SaveButton>
-          <ul>
-            <li>
-              <p>
-                <b>Vote</b> : {vote_average}
-              </p>
-            </li>
-            <li>
-              <p>
-                <b>Overview</b>
-              </p>
-              <p>{overview}</p>
-            </li>
-            <li>
-              <p>
-                <b>Genre</b>
-              </p>
-              <ul>{genreItem}</ul>
-            </li>
-          </ul>
+
+          <MovieDetailInfo movieItem={movieItem}></MovieDetailInfo>
         </div>
       </div>
 
