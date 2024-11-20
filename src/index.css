@@ -196,26 +196,6 @@ header nav h4:hover {
   position: relative;
 }
 
-.movieList .arrow {
-  position: absolute;
-  top: 40%;
-  filter: hue-rotate(180deg) brightness(3.2);
-}
-
-.movieList .arrow.left {
-  left: -50px;
-  rotate: 180deg;
-}
-
-.movieList .arrow.right {
-  right: 0;
-}
-
-.movieList .arrow:hover {
-  filter: hue-rotate(180deg) brightness(1.2);
-  transition: all ease-in-out 0.5;
-}
-
 .movieList li {
   width: 200px;
 }
@@ -227,7 +207,7 @@ header nav h4:hover {
 .typeContent {
   width: 100vw;
   padding: 0 2rem;
-  overflow: scroll;
+  overflow: overlay;
 }
 
 .typeContent li {
@@ -270,4 +250,32 @@ form button {
 }
 form button:hover {
   opacity: 0.5;
+}
+
+/* Loading */
+.loading img {
+  width: 100px;
+  animation: 5s popcorn infinite;
+}
+
+@keyframes popcorn {
+  0% {
+    /* transform: translateX(0%); */
+    rotate: 80deg;
+  }
+
+  50% {
+    /* transform: translateX(50%); */
+    rotate: -15deg;
+  }
+
+  100% {
+    /* transform: translateX(100%); */
+    rotate: 80deg;
+  }
+}
+
+/* notfound */
+.notfound img {
+  width: 200px;
 }

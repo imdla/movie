@@ -1,5 +1,11 @@
 import React from "react";
+import { popcornImgUrl } from "../utills/movieInfo";
 
 export default function Loading() {
-  return <p>이미지를 로딩중입니다.</p>;
+  return (
+    <div className="loading flex-center">
+      <img src={popcornImgUrl} alt="" />
+      <div>이미지를 로딩중입니다.</div>
+    </div>
+  );
 }
