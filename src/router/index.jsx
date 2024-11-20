@@ -1,12 +1,16 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import RootLayout from "../layout/RootLayout";
+import MainLayout from "../layout/MainLayout";
+
 import Login from "../pages/Login";
 import MyPage from "../pages/MyPage";
-import MainLayout from "../layout/MainLayout";
+
 import MovieLists from "../pages/MovieLists";
 import MovieType from "../pages/MovieType";
 import MovieDetail from "../pages/MovieDetail";
 import MovieReviews from "../pages/MovieReviews";
+
+import NotFound from "../pages/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +46,14 @@ const router = createBrowserRouter([
         element: <MyPage />,
       },
     ],
+  },
+  {
+    path: "/notfound",
+    element: <NotFound />,
+  },
+  {
+    path: "*",
+    element: <Navigate to="/notfound" replace />,
   },
 ]);
 

@@ -13,6 +13,7 @@ export default function MakeItem({ listType, count }) {
         setMovieList(data);
       } catch (err) {
         console.error(err);
+        alert('요청된 페이지가 없습니다.')
       } finally {
       }
     }

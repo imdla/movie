@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import MakeItem from "./MakeItem";
 import { typeAmount } from "../utills/movieInfo";
+import MakeItem from "./MakeItem";
 
 export default function MovieListsItem({ listType }) {
   const navigate = useNavigate();
