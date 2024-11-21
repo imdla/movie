@@ -33,6 +33,17 @@ export default function SaveButton({ isSaved, setIsSaved, movieId }) {
   // }, [saveMovieId]);
 
   useEffect(() => {
+    if (saveMovieId.length == 0) {
+      const savedMoviesLocal = JSON.parse(
+        localStorage.getItem("saveMovieId") || "[]"
+      );
+      for (let id of savedMoviesLocal) {
+        dispatch(saved(id));
+      }
+    }
+  });
+
+  useEffect(() => {
     if (isSaved) {
       localStorage.setItem("saveMovieId", JSON.stringify(saveMovieId));
     } else {
