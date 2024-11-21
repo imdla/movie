@@ -191,6 +191,24 @@ header nav h4:hover {
   background-color: #de2a60;
 }
 
+.hash li {
+  margin-right: 0.5rem;
+}
+
+.hash li a {
+  font-size: 16px;
+  color: #999;
+  border: 2px solid #999;
+  border-radius: 20px;
+  padding: 0.3rem 0.6rem;
+}
+
+.hash li a:hover {
+  border-color: #eee;
+  color: #eee;
+  transition: all 0.5s;
+}
+
 /* movieList */
 .movieList {
   position: relative;
