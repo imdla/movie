@@ -12,7 +12,9 @@ const movieSaveSlice = createSlice({
       state.saveMovieId.push(action.payload);
     },
     remove: (state, action) => {
-      state.saveMovieId.pop(action.payload);
+      state.saveMovieId = state.saveMovieId.filter(
+        (id) => id !== action.payload
+      );
     },
   },
 });
