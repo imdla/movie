@@ -21,6 +21,7 @@ export default function MovieDetail() {
   const { isLoggedIn } = useSelector((state) => state.auth);
   const { saveMovieId } = useSelector((state) => state.movieSave);
 
+  console.log(isSaved);
   useEffect(() => {
     async function getMovieById() {
       try {
@@ -43,6 +44,17 @@ export default function MovieDetail() {
 
     setIsSaved(isLoggedIn && saveValue ? true : false);
   }, [isSaved]);
+
+  // useEffect(() => {
+  //   const savedMoviesLocal = JSON.parse(
+  //     localStorage.getItem("saveMovieId") || "[]"
+  //   );
+  //   let saveValue = savedMoviesLocal.find((id) => {
+  //     return id === movieId;
+  //   });
+
+  //   setIsSaved(isLoggedIn && saveValue ? true : false);
+  // }, [isSaved]);
 
   if (loading) {
     return <Loading></Loading>;
