@@ -19,7 +19,6 @@ export default function MyPage() {
     }
   }, [isLoggedIn]);
 
-  // store 사용한 이전 코드
   useEffect(() => {
     function getMovieSaveItems() {
       async function func() {

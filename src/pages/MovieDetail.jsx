@@ -36,6 +36,7 @@ export default function MovieDetail() {
     getMovieById();
   }, []);
 
+  // store 사용한 이전 코드
   // useEffect(() => {
   //   let saveValue = saveMovieId.find((id) => {
   //     return id === movieId;
@@ -44,15 +45,12 @@ export default function MovieDetail() {
   //   setIsSaved(isLoggedIn && saveValue ? true : false);
   // }, [isSaved]);
 
+  // 렌더링될 때 마다 로컬 스토리지통해 isSaved 값 업데이트
   useEffect(() => {
     const saveMoviesToGlobalState = async () => {
       const savedMoviesLocal = JSON.parse(
         localStorage.getItem("saveMovieId") || "[]"
       );
-
-      // let saveValue = savedMoviesLocal.find((id) => {
-      //   return id === movieId;
-      // });
 
       let saveValue = false;
       for (let id of savedMoviesLocal) {
@@ -74,7 +72,6 @@ export default function MovieDetail() {
 
   return (
     <div className="container">
-      <button onClick={() => console.log(isSaved)}>클릭</button>
       <h2>Movie Detail</h2>
       <div className="flex-center">
         <img src={`${imgUrl()}${poster_path}`} alt="" />
