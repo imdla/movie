@@ -45,7 +45,7 @@ export default function Header() {
             <Link to={"/movie/top_rated"}># 순위별</Link>
           </li>
           <li>
-            <Link to={"/movie/top_rated"}># 장르별</Link>
+            <Link to={"/movie/genre"}># 장르별</Link>
           </li>
         </ul>
       </div>

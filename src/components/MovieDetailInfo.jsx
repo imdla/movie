@@ -9,22 +9,14 @@ export default function MovieDetailInfo({ movieItem }) {
   return (
     <>
       <ul>
-        <li>
+        <li className="flex-center justy-start ">
           <p>
-            <b>Vote</b> : {vote_average}
+            <b>평균</b> {vote_average}
           </p>
+          <ul className="ulTag detailGenre">{genreItem}</ul>
         </li>
-        <li>
-          <p>
-            <b>Overview</b>
-          </p>
+        <li className="ulTag gray">
           <p>{overview}</p>
-        </li>
-        <li>
-          <p>
-            <b>Genre</b>
-          </p>
-          <ul>{genreItem}</ul>
         </li>
       </ul>
     </>

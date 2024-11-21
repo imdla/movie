@@ -36,12 +36,12 @@ export default function Login() {
 
       <form className="flex-center flex-col" action="" onSubmit={handleSubmit}>
         <div className="marginBttom">
-          <label htmlFor="name">USER NAME : </label>
+          <label htmlFor="name">USER NAME </label>
           <input type="text" id="name" name="name" onChange={handleChange} />
         </div>
 
         <div className="marginBttom">
-          <label htmlFor="password">PASSWORD : </label>
+          <label htmlFor="password">PASSWORD </label>
           <input
             type="password"
             id="password"

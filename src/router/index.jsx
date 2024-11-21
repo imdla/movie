@@ -10,6 +10,8 @@ import MovieType from "../pages/MovieType";
 import MovieDetail from "../pages/MovieDetail";
 import MovieReviews from "../pages/MovieReviews";
 
+import MovieGenres from "../pages/MovieGenres";
+
 import NotFound from "../pages/NotFound";
 import Loading from "../pages/Loading";
 
@@ -37,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/movie/review/:movieId",
         element: <MovieReviews />,
+      },
+      {
+        path: "/movie/genre",
+        element: <MovieGenres />,
       },
       {
         path: "/login",

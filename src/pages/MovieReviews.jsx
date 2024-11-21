@@ -44,11 +44,11 @@ export default function MovieReviews({ count }) {
         : reviewBasicImgUrl;
 
       return (
-        <li className="ulTag marginBttom" key={id}>
+        <li className="ulTag marginBttom movieReview" key={id}>
           <img className="reviewImg" src={imgSrc} alt="" />
 
-          <div>
-            <h3>{author}</h3>
+          <div className="flex-center flex-col align-start">
+            <h2>{author}</h2>
             <p>{content}</p>
           </div>
         </li>

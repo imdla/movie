@@ -73,10 +73,10 @@ export default function MovieDetail() {
   return (
     <div className="container">
       <h2>Movie Detail</h2>
-      <div className="flex-center">
+      <div className="flex-center movieDetail">
         <img src={`${imgUrl()}${poster_path}`} alt="" />
         <div>
-          <h3>{title}</h3>
+          <h1>{title}</h1>
           <SaveButton
             isSaved={isSaved}
             setIsSaved={setIsSaved}
