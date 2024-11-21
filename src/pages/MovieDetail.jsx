@@ -36,24 +36,24 @@ export default function MovieDetail() {
     getMovieById();
   }, []);
 
-  // useEffect(() => {
-  //   let saveValue = saveMovieId.find((id) => {
-  //     return id === movieId;
-  //   });
-
-  //   setIsSaved(isLoggedIn && saveValue ? true : false);
-  // }, [isSaved]);
-
   useEffect(() => {
-    const savedMoviesLocal = JSON.parse(
-      localStorage.getItem("saveMovieId") || "[]"
-    );
-    let saveValue = savedMoviesLocal.find((id) => {
+    let saveValue = saveMovieId.find((id) => {
       return id === movieId;
     });
 
     setIsSaved(isLoggedIn && saveValue ? true : false);
   }, [isSaved]);
+
+  // useEffect(() => {
+  //   const savedMoviesLocal = JSON.parse(
+  //     localStorage.getItem("saveMovieId") || "[]"
+  //   );
+  //   let saveValue = savedMoviesLocal.find((id) => {
+  //     return id === movieId;
+  //   });
+
+  //   setIsSaved(isLoggedIn && saveValue ? true : false);
+  // }, [isSaved]);
 
   if (loading) {
     return <Loading></Loading>;
@@ -63,8 +63,6 @@ export default function MovieDetail() {
 
   return (
     <div className="container">
-      <button onClick={() => console.log({ isSaved })}>클릭</button>
-      
       <h2>Movie Detail</h2>
       <div className="flex-center">
         <img src={`${imgUrl()}${poster_path}`} alt="" />

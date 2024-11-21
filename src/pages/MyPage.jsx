@@ -19,33 +19,13 @@ export default function MyPage() {
     }
   }, [isLoggedIn]);
 
-  // useEffect(() => {
-  //   function getMovieSaveItems() {
-  //     async function func() {
-  //       const savedMovies = [];
-
-  //       for (let movieId of saveMovieId) {
-  //         const movieItem = await movieApi.getMovieById(movieId);
-  //         savedMovies.push(movieItem);
-  //       }
-  //       setMovieItems(savedMovies);
-  //     }
-  //     func();
-  //   }
-
-  //   getMovieSaveItems();
-  // }, [saveMovieId]);
-
-  // 로컬 스토리지에서 저장된 영화 가져오기
+  // store 사용한 이전 코드
   useEffect(() => {
-    function getSavedMoviesLocalStorage() {
-      const savedMoviesLocal = JSON.parse(
-        localStorage.getItem("saveMovieId") || "[]"
-      );
+    function getMovieSaveItems() {
       async function func() {
         const savedMovies = [];
 
-        for (let movieId of savedMoviesLocal) {
+        for (let movieId of saveMovieId) {
           const movieItem = await movieApi.getMovieById(movieId);
           savedMovies.push(movieItem);
         }
@@ -53,8 +33,29 @@ export default function MyPage() {
       }
       func();
     }
-    getSavedMoviesLocalStorage();
+
+    getMovieSaveItems();
   }, [saveMovieId]);
+
+  // 로컬 스토리지에서 저장된 영화 가져오기
+  // useEffect(() => {
+  //   function getSavedMoviesLocalStorage() {
+  //     const savedMoviesLocal = JSON.parse(
+  //       localStorage.getItem("saveMovieId") || "[]"
+  //     );
+  //     async function func() {
+  //       const savedMovies = [];
+
+  //       for (let movieId of savedMoviesLocal) {
+  //         const movieItem = await movieApi.getMovieById(movieId);
+  //         savedMovies.push(movieItem);
+  //       }
+  //       setMovieItems(savedMovies);
+  //     }
+  //     func();
+  //   }
+  //   getSavedMoviesLocalStorage();
+  // }, [saveMovieId]);
 
   const movieSaveItems = movieItems.map((item) => {
     return (
