@@ -1,11 +1,10 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import RootLayout from "../layout/RootLayout";
-import MainLayout from "../layout/MainLayout";
 
 import Login from "../pages/Login";
 import MyPage from "../pages/MyPage";
 
-import MovieLists from "../pages/MovieLists";
+import MovieLists from "../pages/MovieList";
 import MovieType from "../pages/MovieType";
 import MovieDetail from "../pages/MovieDetail";
 import MovieReviews from "../pages/MovieReviews";
