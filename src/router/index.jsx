@@ -9,7 +9,7 @@ import MovieType from "../pages/MovieType";
 import MovieDetail from "../pages/MovieDetail";
 import MovieReviews from "../components/DetailReview";
 
-import MovieGenres from "../pages/MovieGenres";
+import MovieGenres from "../pages/MovieGenre";
 
 import NotFound from "../pages/NotFound";
 import Loading from "../pages/Loading";

@@ -8,6 +8,8 @@ export const reviewAmount = 10;
 
 export const typeListAmount = 5;
 
+export const genreTransWord = ["애니메이션", "스릴러"];
+
 export const reviewBasicImgUrl = `https://audition.hangame.com/images/common/img_default.jpg`;
 
 export const popcornImgUrl = "./src/assets/popcorn.png";

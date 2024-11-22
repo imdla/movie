@@ -36,19 +36,19 @@ export default function Header() {
       <div>
         <ul className="flex-center flex-wrap justy-start ulTag hash">
           <li>
-            <Link to={"/movie/now_playing"}># 현재 상영</Link>
+            <Link to={"movie/now_playing"}># 현재 상영</Link>
           </li>
           <li>
-            <Link to={"/movie/popular"}># 인기있는</Link>
+            <Link to={"movie/popular"}># 인기있는</Link>
           </li>
           <li>
-            <Link to={"/movie/top_rated"}># 순위별</Link>
+            <Link to={"movie/top_rated"}># 순위별</Link>
           </li>
           <li>
-            <Link to={"/movie/genre/16"}># 애니메이션</Link>
+            <Link to={"movie/genre/16"}># 애니메이션</Link>
           </li>
           <li>
-            <Link to={"/movie/genre/53"}># 스릴러</Link>
+            <Link to={"movie/genre/53"}># 스릴러</Link>
           </li>
         </ul>
       </div>
