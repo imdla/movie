@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import _ from "lodash";
 
 const initialState = {
   saveMovieId: [],
@@ -10,6 +11,7 @@ const movieSaveSlice = createSlice({
   reducers: {
     saved: (state, action) => {
       state.saveMovieId.push(action.payload);
+      state.saveMovieId = _.uniq(state.saveMovieId);
     },
     remove: (state, action) => {
       state.saveMovieId = state.saveMovieId.filter(
