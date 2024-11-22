@@ -96,6 +96,10 @@ a {
   flex-direction: column;
 }
 
+.justy-around {
+  justify-content: space-around;
+}
+
 .justy-start {
   justify-content: flex-start;
 }
@@ -109,8 +113,9 @@ a {
 }
 
 .container {
-  padding: 2rem;
+  padding: 3rem;
   width: 96vw;
+  box-sizing: border-box;
 }
 
 .ulTag {
@@ -133,7 +138,7 @@ a {
 
 img {
   width: 200px;
-  margin-right: 1rem;
+  margin-right: 3rem;
   margin-bottom: 1rem;
   border-radius: 20px;
 }
@@ -255,6 +260,8 @@ header nav h4:hover {
 .movieType li {
   position: relative;
   margin-top: 2rem;
+  width: 100%;
+  display: flex;
 }
 
 .movieType .grade {
@@ -318,6 +325,27 @@ header nav h4:hover {
 .movieReview p {
   font-size: 16px;
   color: #aeaeae;
+}
+
+/* movieGenre */
+.movieGenre {
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.movieGenreList li {
+  margin: 0;
+}
+
+.movieGenreList img {
+  width: 240px;
+  margin-right: 12px;
+  border-radius: 5px;
+}
+
+.movieGenre h3,
+.movieGenre p {
+  display: none;
 }
 
 /* Login */

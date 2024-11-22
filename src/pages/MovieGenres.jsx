@@ -1,9 +1,8 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import movieApi from "../api/movieApi";
 import MovieItem from "../components/MovieItem";
-import { useParams } from "react-router-dom";
 
 export default function MovieGenres() {
   const { genreId } = useParams();
@@ -39,8 +38,11 @@ export default function MovieGenres() {
   });
 
   return (
-    <>
-      <ul className="ulTag typeContent">{genreItems}</ul>
-    </>
+    <div className="container movieGenre">
+      <h2>{genreId == 16 ? "애니메이션" : "스릴러"}</h2>
+      <ul className="ulTag flex-center flex-wrap justy-around movieGenreList">
+        {genreItems}
+      </ul>
+    </div>
   );
 }
