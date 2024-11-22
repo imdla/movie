@@ -4,7 +4,7 @@ import MakeItem from "../components/MakeItem";
 import { typeListAmount } from "../utills/movieInfo";
 import { useState } from "react";
 
-export default function MovieType() {
+export default function  MovieType() {
   const { listType } = useParams();
   const [cnt, setCnt] = useState(typeListAmount);
 

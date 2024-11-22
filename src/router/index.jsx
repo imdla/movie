@@ -22,34 +22,35 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <MainLayout />,
-      },
-      {
-        path: "/movie",
         element: <MovieLists />,
       },
       {
-        path: "/movie/:listType",
+        path: "movie",
+        element: <Navigate to="/" replace />,
+      },
+      {
+        path: "movie/:listType",
         element: <MovieType />,
       },
       {
-        path: "/movie/detail/:movieId",
+        path: "movie/detail/:movieId",
         element: <MovieDetail />,
       },
       {
-        path: "/movie/review/:movieId",
+        path: "movie/review/:movieId",
         element: <MovieReviews />,
       },
       {
-        path: "/movie/genre/:genreId",
+        path: "movie/genre/:genreId",
         element: <MovieGenres />,
       },
+
       {
-        path: "/login",
+        path: "login",
         element: <Login />,
       },
       {
-        path: "/mypage",
+        path: "mypage",
         element: <MyPage />,
       },
     ],

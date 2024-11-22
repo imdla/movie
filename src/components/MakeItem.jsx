@@ -5,7 +5,7 @@ import movieApi from "../api/movieApi";
 import MovieItem from "./MovieItem";
 import Loading from "../pages/Loading";
 
-export default function MakeItem({ listType, count }) {
+export default function  MakeItem({ listType, count }) {
   const navigate = useNavigate();
   const [movieList, setMovieList] = useState();
   const [loading, setLoading] = useState(true);

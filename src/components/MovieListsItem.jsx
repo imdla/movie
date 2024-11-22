@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { typeAmount } from "../utills/movieInfo";
 import MakeItem from "./MakeItem";
 
-export default function MovieListsItem({ listType }) {
+export default function  MovieListsItem({ listType }) {
   const navigate = useNavigate();
 
   let movieItems = <MakeItem listType={listType} count={typeAmount}></MakeItem>;
