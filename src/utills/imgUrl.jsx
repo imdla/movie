@@ -1,3 +1,3 @@
 export default function imgUrl() {
-  return "https://image.tmdb.org/t/p/w500/";
+  return "https://image.tmdb.org/t/p/original/";
 }

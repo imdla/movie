@@ -34,7 +34,7 @@ export default function Header() {
       </div>
 
       <div>
-        <ul className="flex-center ulTag justy-start hash">
+        <ul className="flex-center flex-wrap justy-start ulTag hash">
           <li>
             <Link to={"/movie/now_playing"}># 현재 상영</Link>
           </li>

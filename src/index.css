@@ -113,8 +113,8 @@ a {
 }
 
 .container {
-  padding: 3rem;
-  width: 96vw;
+  padding: 1rem 3rem;
+  width: 100vw;
   box-sizing: border-box;
 }
 
@@ -203,14 +203,15 @@ header nav h4:hover {
 
 .hash li {
   margin-right: 0.5rem;
+  min-height: 48px;
 }
 
 .hash li a {
-  font-size: 16px;
+  font-size: 14px;
   color: #999;
   border: 2px solid #999;
   border-radius: 20px;
-  padding: 0.5rem 1rem;
+  padding: 8px 16px;
   opacity: 0.8;
 }
 

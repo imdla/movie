@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import movieApi from "../api/movieApi";
+import useMovieApi from "../hooks/useMovieApi";
 import imgUrl from "../utills/imgUrl";
 
 import Loading from "../pages/Loading";
-import useMovieApi from "../hooks/useMovieApi";
 import NotFound from "../pages/NotFound";
 
 export default function MovieItem({ listType, count }) {
