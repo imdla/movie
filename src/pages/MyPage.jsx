@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import movieApi from "../api/movieApi";
 import MovieItem from "../components/MovieItem";
-import EmptyMyPage from "../components/EmptyMyPage";
+import EmptyMyPage from "../components/SavedEmpty";
 import { saved } from "../store/slices/movieSaveSlice";
 import _ from "lodash";
 
@@ -24,26 +24,26 @@ export default function MyPage() {
     }
   }, [isLoggedIn]);
 
-  useEffect(() => {
-    const saveMoviesToGlobalState = async () => {
-      if (saveMovieId.length === 0) {
-        const savedMoviesLocal = JSON.parse(
-          localStorage.getItem("saveMovieId") || "[]"
-        );
+  // useEffect(() => {
+  //   const saveMoviesToGlobalState = async () => {
+  //     if (saveMovieId.length === 0) {
+  //       const savedMoviesLocal = JSON.parse(
+  //         localStorage.getItem("saveMovieId") || "[]"
+  //       );
 
-        if (savedMoviesLocal.length != 0) {
-          setIsSaved(true);
+  //       if (savedMoviesLocal.length != 0) {
+  //         setIsSaved(true);
 
-          for (let id of savedMoviesLocal) {
-            dispatch(saved(id));
-          }
-        }
-      } else {
-        setIsSaved(true);
-      }
-    };
-    saveMoviesToGlobalState();
-  }, [saveMovieId]);
+  //         for (let id of savedMoviesLocal) {
+  //           dispatch(saved(id));
+  //         }
+  //       }
+  //     } else {
+  //       setIsSaved(true);
+  //     }
+  //   };
+  //   saveMoviesToGlobalState();
+  // }, [saveMovieId]);
 
   useEffect(() => {
     function getMovieSaveItems() {

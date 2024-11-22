@@ -4,8 +4,6 @@ export const movieTypeList = ["now_playing", "popular", "top_rated"];
 
 export const typeAmount = 15;
 
-export const reviewAmount = 10;
-
 export const typeListAmount = 5;
 
 export const genreTransWord = ["애니메이션", "스릴러"];

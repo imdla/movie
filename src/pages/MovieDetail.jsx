@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 import movieApi from "../api/movieApi";
 import useMovieApi from "../hooks/useMovieApi";
 import imgUrl from "../utills/imgUrl";
-import { reviewAmount } from "../utills/movieUtils";
 
 import DetailReview from "../components/DetailReview";
 import SaveButton from "../components/SaveButton";
@@ -18,7 +17,7 @@ export default function MovieDetail() {
   const [isSaved, setIsSaved] = useState();
   const { isLoggedIn } = useSelector((state) => state.auth);
   const { saveMovieId } = useSelector((state) => state.movieSave);
-  
+
   const {
     data: movieItem,
     loading,
@@ -54,10 +53,10 @@ export default function MovieDetail() {
   // });
 
   if (loading) {
-    return <Loading></Loading>
+    return <Loading></Loading>;
   }
   if (error) {
-    return <NotFound></NotFound>
+    return <NotFound></NotFound>;
   }
 
   const { title, poster_path, vote_average, overview, genres } = movieItem;
@@ -94,7 +93,7 @@ export default function MovieDetail() {
         </div>
       </div>
 
-      <DetailReview count={reviewAmount}></DetailReview>
+      <DetailReview></DetailReview>
     </div>
   );
 }

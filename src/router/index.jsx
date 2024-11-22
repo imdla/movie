@@ -7,9 +7,7 @@ import MyPage from "../pages/MyPage";
 import MovieLists from "../pages/MovieList";
 import MovieType from "../pages/MovieType";
 import MovieDetail from "../pages/MovieDetail";
-import MovieReviews from "../components/DetailReview";
-
-import MovieGenres from "../pages/MovieGenre";
+import MovieGenre from "../pages/MovieGenre";
 
 import NotFound from "../pages/NotFound";
 import Loading from "../pages/Loading";
@@ -37,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path: "movie/genre/:genreId",
-        element: <MovieGenres />,
+        element: <MovieGenre />,
       },
 
       {
