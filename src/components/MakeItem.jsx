@@ -24,7 +24,7 @@ export default function MakeItem({ listType, count }) {
     }
 
     getMovieList();
-  }, []);
+  }, [listType]);
 
   if (loading) {
     return <Loading></Loading>;

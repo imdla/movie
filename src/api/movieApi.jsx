@@ -17,9 +17,9 @@ const movieApi = {
     return response.data.results;
   },
   // 4. 장르 GET
-  getMovieGenres: async () => {
-    const response = await api.get("/genre/movie/list");
-    return response.genres;
+  getMovieGenres: async (genreId) => {
+    const response = await api.get(`/discover/movie?with_genres=${genreId}?&`);
+    return response.data.results;
   },
 };
 
