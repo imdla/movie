@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import { movieTypeList } from "../utills/movieInfo";
-import { typeAmount } from "../utills/movieInfo";
+import { movieTypeList } from "../utills/movieUtils";
+import { typeAmount } from "../utills/movieUtils";
 
-import MakeItem from "../components/MovieItem";
+import MovieItem from "../components/MovieItem";
 
 export default function MovieLists() {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ export default function MovieLists() {
         </div>
 
         <ul className="ulTag typeContent">
-          <MakeItem listType={type} count={typeAmount}></MakeItem>;
+          <MovieItem listType={type} count={typeAmount}></MovieItem>;
         </ul>
       </div>
     );

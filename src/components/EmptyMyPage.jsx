@@ -1,5 +1,5 @@
 import React from "react";
-import { errorImgUrl } from "../utills/movieInfo";
+import { errorImgUrl } from "../utills/movieUtils";
 
 export default function EmptyMyPage() {
   return (

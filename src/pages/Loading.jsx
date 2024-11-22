@@ -1,5 +1,5 @@
 import React from "react";
-import { popcornImgUrl } from "../utills/movieInfo";
+import { popcornImgUrl } from "../utills/movieUtils";
 
 export default function Loading() {
   return (

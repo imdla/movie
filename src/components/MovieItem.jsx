@@ -8,7 +8,7 @@ import Loading from "../pages/Loading";
 import useMovieApi from "../hooks/useMovieApi";
 import NotFound from "../pages/NotFound";
 
-export default function MakeItem({ listType, count }) {
+export default function MovieItem({ listType, count }) {
   const {
     data: movieList,
     loading,

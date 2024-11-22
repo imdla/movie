@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 import movieApi from "../api/movieApi";
 import imgUrl from "../utills/imgUrl";
-import { reviewAmount } from "../utills/movieInfo";
+import { reviewAmount } from "../utills/movieUtils";
 
 import MovieReviews from "./MovieReviews";
 import Loading from "./Loading";

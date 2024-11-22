@@ -316,6 +316,7 @@ header nav h4:hover {
   border-radius: 50%;
   box-sizing: border-box;
   margin-right: 2rem;
+  object-fit: cover;
 }
 
 .movieReview h3 {

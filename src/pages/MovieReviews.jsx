@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 
 import movieApi from "../api/movieApi";
 import imgUrl from "../utills/imgUrl";
-import { reviewBasicImgUrl } from "../utills/movieInfo";
+import { reviewBasicImgUrl } from "../utills/movieUtils";
 
 import Loading from "./Loading";
 
