@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 export default function Header() {
-  const { isLoggedIn, authName } = useSelector((state) => state.auth);
+  const { isLoggedIn, userName } = useSelector((state) => state.auth.user);
 
   return (
     <header className="container">
@@ -25,7 +25,7 @@ export default function Header() {
             <li>
               <Link to={"/mypage"}>
                 <h4 className="myPage">
-                  {isLoggedIn ? `${authName}님` : "MY PAGE"}
+                  {isLoggedIn ? `${userName}님` : "MY PAGE"}
                 </h4>
               </Link>
             </li>

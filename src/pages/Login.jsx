@@ -8,7 +8,9 @@ export default function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({ name: "", password: "" });
-  const { isLoggedIn, authName, authPw } = useSelector((state) => state.auth);
+  const { isLoggedIn, userName, userPassword } = useSelector(
+    (state) => state.auth.user
+  );
 
   function handleChange(e) {
     return setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,8 +23,15 @@ export default function Login() {
     if (isLoggedIn) {
       dispatch(logout());
     } else {
-      if (authName === name && authPw === password) {
-        dispatch(login());
+      if (userName == name && userPassword == password) {
+        const loginData = {
+          isLoggedIn: true,
+          userName: name,
+          userPassword: password,
+          movieList: [],
+        };
+        dispatch(login(loginData));
+        setFormData({ name: "", password: "" });
         navigate("/");
       } else {
         alert("아이디나 비밀번호가 올바르지 않습니다.");
@@ -37,7 +46,13 @@ export default function Login() {
       <form className="flex-center flex-col" action="" onSubmit={handleSubmit}>
         <div className="marginBttom">
           <label htmlFor="name">USER NAME </label>
-          <input type="text" id="name" name="name" onChange={handleChange} />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+          />
         </div>
 
         <div className="marginBttom">
@@ -46,6 +61,7 @@ export default function Login() {
             type="password"
             id="password"
             name="password"
+            value={formData.password}
             onChange={handleChange}
           />
         </div>

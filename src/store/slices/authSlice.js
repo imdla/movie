@@ -1,20 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  isLoggedIn: true,
-  authName: "홍길동",
-  authPw: "123",
+  user: {
+    isLoggedIn: JSON.parse(localStorage.getItem("user")) || false,
+    userName: "홍길동",
+    userPassword: 123,
+  },
 };
 
 const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    login: (state, actions) => {
-      state.isLoggedIn = true;
+    login: (state, action) => {
+      state.user = action.payload;
+      localStorage.setItem("user", JSON.stringify(action.payload));
     },
-    logout: (state, actions) => {
-      state.isLoggedIn = false;
+    logout: (state, action) => {
+      state.user = {
+        isLoggedIn: false,
+        userName: "홍길동",
+        userPassword: "123",
+      };
+      localStorage.removeItem("user");
     },
   },
 });

@@ -11,7 +11,7 @@ import EmptyMyPage from "../components/SavedEmpty";
 export default function MyPage() {
   const navigate = useNavigate();
   const [movieItems, setMovieItems] = useState([]);
-  const { isLoggedIn } = useSelector((state) => state.auth);
+  const { isLoggedIn, userName } = useSelector((state) => state.auth.user);
   const { saveMovieId } = useSelector((state) => state.movieSave);
 
   useEffect(() => {
@@ -51,7 +51,7 @@ export default function MyPage() {
 
   return (
     <div className="container myPageMovie">
-      <h2>My Favorite Movie Page</h2>
+      <h2>{userName}님의 Favorite Movie Page</h2>
       <div>
         <ul className="ulTag movieList">
           {movieSaveItems[0] ? movieSaveItems : <EmptyMyPage></EmptyMyPage>}
