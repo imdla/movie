@@ -193,6 +193,39 @@ header nav h4:hover {
   transition: all ease-in-out 0.5s;
 }
 
+@media (max-width: 640px) {
+  header .search,
+  .hash {
+    display: none;
+  }
+}
+
+header .search form {
+  width: 254px;
+  background-color: #555;
+  padding: 8px 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+}
+
+header .search a input {
+  border: 0;
+  background-color: transparent;
+  font-size: 16px;
+  color: #aeaeae;
+  outline: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+header .search a i {
+  margin-right: 0.7rem;
+  font-size: 18px;
+  color: #aeaeae;
+}
+
 .myPage {
   background-color: #f82f62;
 }
@@ -255,6 +288,52 @@ header nav h4:hover {
   top: 230px;
   left: -2px;
   text-shadow: 1px 1px 2px #333;
+}
+
+.scroll-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  margin: 0 2rem;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-btn {
+  position: absolute;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-btn.left {
+  left: 0;
+  top: 160px;
+}
+
+.scroll-btn.right {
+  right: 0;
+  top: 160px;
+}
+
+.scroll-btn:hover {
+  opacity: 0.5;
 }
 
 /* movieType */

@@ -7,7 +7,7 @@ export default function Header() {
 
   return (
     <header className="container">
-      <div className="flex-center justy-between ">
+      <div className="flex-center flex-wrap justy-between ">
         <div>
           <Link to={"/"}>
             <h1 className="text-center logo">Movie Page</h1>
@@ -15,8 +15,20 @@ export default function Header() {
         </div>
 
         <nav>
-          <ul className="ulTag flex-center">
-            <li></li>
+          <ul className="ulTag flex-wrap flex-center">
+            <li className="search">
+              <Link to={"/"}>
+                <form action="">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input
+                    type="text"
+                    name="searchInput"
+                    id="searchInput"
+                    placeholder="검색"
+                  />
+                </form>
+              </Link>
+            </li>
             <li>
               <Link to={"/login"}>
                 <h4>{isLoggedIn ? "로그아웃" : "로그인"}</h4>
