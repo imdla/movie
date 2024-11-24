@@ -310,23 +310,41 @@ header nav h4:hover {
   border-radius: 10px;
 }
 
-/* movieReview */
-.reviewImg {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  box-sizing: border-box;
-  margin-right: 2rem;
-  object-fit: cover;
+i span {
+  margin-left: 0.5rem;
+  font-size: 14px;
 }
 
-.movieReview h3 {
+/* movieReview */
+.reviewImg {
+  display: block;
+  height: 68px;
+  width: 68px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  object-fit: initial;
+  margin: 0;
+}
+
+.movieReviewUl {
+  padding: 0;
+}
+
+.movieReview > div {
+  margin-left: 2rem;
+}
+
+.movieReview h4 {
   margin: 0;
 }
 
 .movieReview p {
-  font-size: 16px;
+  font-size: 14px;
+  width: 500px;
+  height: auto;
   color: #aeaeae;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 /* movieGenre */
@@ -357,21 +375,26 @@ form label {
 
 form button {
   border: none;
-  margin-top: 2rem;
+  margin: 2rem 0;
 }
 form button:hover {
   opacity: 0.5;
 }
 
 /* Loading */
+.loading {
+  padding-left: 3rem;
+}
+
 .loading img {
-  width: 100px;
-  animation: 5s popcorn infinite;
+  width: 140px;
+  object-fit: cover;
+  animation: 3s ease-in-out popcorn infinite;
 }
 
 @keyframes popcorn {
   0% {
-    rotate: 80deg;
+    rotate: 60deg;
   }
 
   50% {
@@ -379,7 +402,7 @@ form button:hover {
   }
 
   100% {
-    rotate: 80deg;
+    rotate: 60deg;
   }
 }
 

@@ -12,4 +12,8 @@ export const reviewBasicImgUrl = `https://audition.hangame.com/images/common/img
 
 export const popcornImgUrl = "./src/assets/popcorn.png";
 
+export const popcorn1ImgUrl = "./src/assets/1.png";
+export const popcorn2ImgUrl = "./src/assets/2.png";
+export const popcorn3ImgUrl = "./src/assets/3.png";
+
 export const errorImgUrl = "./src/assets/error.png";

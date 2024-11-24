@@ -32,11 +32,20 @@ export default function MovieReviews() {
       : reviewBasicImgUrl;
 
     return (
-      <li className="ulTag marginBttom movieReview" key={id}>
+      <li
+        className="ulTag flex-center justy-start marginBttom movieReview"
+        key={id}
+      >
         <img className="reviewImg" src={imgSrc} alt="" />
 
         <div className="flex-center flex-col align-start">
-          <h2>{author}</h2>
+          <h4>
+            <b>
+              {author}{" "}
+              <span>{"⭐".repeat(Math.round(author_details.rating / 2))}</span>
+            </b>
+          </h4>
+
           <p>{content}</p>
         </div>
       </li>
@@ -46,7 +55,7 @@ export default function MovieReviews() {
   return (
     <>
       <h2>Movie Review</h2>
-      <ul className="marginTop">{moveReviews}</ul>
+      <ul className="marginTop movieReviewUl">{moveReviews}</ul>
     </>
   );
 }

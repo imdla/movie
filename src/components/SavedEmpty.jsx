@@ -7,7 +7,7 @@ export default function EmptyMyPage() {
   return (
     <>
       <img src={errorImgUrl} alt="" />
-      <div>
+      <div className="flex-center flex-col">
         <p>현재 저장한 영화가 없습니다</p>
         <button onClick={() => navigate("/")}>영화 둘러보기</button>
       </div>

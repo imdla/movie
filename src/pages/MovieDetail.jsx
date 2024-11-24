@@ -71,13 +71,22 @@ export default function MovieDetail() {
         <div>
           <h1>{title}</h1>
           <button onClick={handleClick}>
-            {isSaved ? "저장 취소" : "저장"}
+            {isSaved ? (
+              <i class="fa-solid fa-x">
+                <span> 저장 취소</span>
+              </i>
+            ) : (
+              <i class="fa-solid fa-plus">
+                {" "}
+                <span> 저장</span>
+              </i>
+            )}
           </button>
 
           <ul>
             <li className="flex-center justy-start ">
               <p>
-                <b>평균</b> {vote_average}
+                평균 <b>{Math.round(vote_average * 100) / 100}</b>
               </p>
               <ul className="ulTag detailGenre">{genreItem}</ul>
             </li>
