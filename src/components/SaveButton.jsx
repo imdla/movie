@@ -27,35 +27,9 @@ export default function SaveButton({ isSaved, setIsSaved, movieId }) {
     }
   }
 
-  // 처음에 렌더링 했을 때 로컬 스토리지 확인 후 -> store에 입력
-  // useEffect(() => {
-  //   const saveMoviesToGlobalState = async () => {
-  //     if (saveMovieId.length === 0) {
-  //       const savedMoviesLocal = JSON.parse(
-  //         localStorage.getItem("saveMovieId") || "[]"
-  //       );
-
-  //       for (let id of savedMoviesLocal) {
-  //         dispatch(saved(id));
-  //       }
-  //     }
-  //   };
-  //   saveMoviesToGlobalState();
-  // }, []);
-
-  // // // 페이지 벗어나기 전에 로컬 스토리지에 저장
-  // useEffect(() => {
-  //   function saveMoviesToLocalStorage() {
-  //     if (Array.isArray(saveMovieId)) {
-  //       localStorage.setItem("saveMovieId", JSON.stringify(saveMovieId));
-  //     }
-  //   }
-  //   saveMoviesToLocalStorage();
-  // }, [isSaved]);
-
   return (
     <>
-      <button onClick={handleClick}>{isSaved ? "저장 안함" : "저장"}</button>
+      <button onClick={handleClick}>{isSaved ? "저장 취소" : "저장"}</button>
     </>
   );
 }

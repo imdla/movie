@@ -33,25 +33,6 @@ export default function MovieDetail() {
     setIsSaved(isLoggedIn && saveValue ? true : false);
   }, [isSaved]);
 
-  // 렌더링될 때 마다 로컬 스토리지통해 isSaved 값 업데이트
-  // useEffect(() => {
-  //   const saveMoviesToGlobalState = async () => {
-  //     const savedMoviesLocal = JSON.parse(
-  //       localStorage.getItem("saveMovieId") || "[]"
-  //     );
-
-  //     let saveValue = false;
-  //     for (let id of savedMoviesLocal) {
-  //       if (id === movieId) {
-  //         saveValue = true;
-  //       }
-  //     }
-
-  //     setIsSaved(isLoggedIn && saveValue ? true : false);
-  //   };
-  //   saveMoviesToGlobalState();
-  // });
-
   if (loading) {
     return <Loading></Loading>;
   }

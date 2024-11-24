@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { typeListAmount } from "../utills/movieUtils";
-import MovieItem from "../components/MovieItem";
+import MovieItem from "../components/MovieListItem";
 
 export default function MovieType() {
   const { listType } = useParams();
