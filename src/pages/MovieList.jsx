@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { movieTypeList } from "../utills/movieUtils";
 import { typeAmount } from "../utills/movieUtils";
 
-import MovieItem from "../components/MovieListItem";
+import MovieListItem from "../components/MovieListItem";
 
 export default function MovieLists() {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ export default function MovieLists() {
     if (scrollRefs.current[index]) {
       scrollRefs.current[index].scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth", // 부드럽게 스크롤
+        behavior: "smooth",
       });
     }
   };
@@ -45,7 +45,7 @@ export default function MovieLists() {
               ref={(el) => (scrollRefs.current[index] = el)}
             >
               <ul className="ulTag typeContent">
-                <MovieItem listType={type} count={typeAmount}></MovieItem>
+                <MovieListItem listType={type} count={typeAmount}></MovieListItem>
               </ul>
             </div>
             <button
