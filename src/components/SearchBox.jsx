@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function SearchBox() {
   const [intputData, setInputData] = useState("");
+  const navigate = useNavigate();
 
   function handleChange(e) {
     setInputData(e.target.value);
@@ -9,6 +11,7 @@ export default function SearchBox() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    navigate('');
     setInputData("");
   }
 
