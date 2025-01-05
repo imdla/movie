@@ -1,21 +1,31 @@
 import React, { useState } from "react";
 
 export default function SearchBox() {
-  const [intputDate, setInputData] = useState("");
+  const [intputData, setInputData] = useState("");
 
-  function handleClick() {}
+  function handleChange(e) {
+    setInputData(e.target.value);
+  }
+
+  function handleSubmit(e) {
+    e.prventDefault();
+    console.log(intputData);
+    setInputData("");
+  }
 
   return (
     <div id="searchBox">
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <button className="searchBtn">
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <i className="fa-solid fa-magnifying-glass"></i>
         </button>
         <input
           type="text"
           name="searchInput"
           id="searchInput"
           placeholder="검색"
+          value={intputData}
+          onChange={handleChange}
         />
       </form>
     </div>

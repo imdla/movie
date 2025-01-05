@@ -38,21 +38,24 @@ export default function MovieLists() {
               className="scroll-btn left"
               onClick={() => handleScroll(index, "left")}
             >
-              <i class="fa-solid fa-arrow-left"></i>
+              <i className="fa-solid fa-arrow-left"></i>
             </button>
             <div
               className="scroll-container"
               ref={(el) => (scrollRefs.current[index] = el)}
             >
               <ul className="ulTag typeContent">
-                <MovieListItem listType={type} count={typeAmount}></MovieListItem>
+                <MovieListItem
+                  listType={type}
+                  count={typeAmount}
+                ></MovieListItem>
               </ul>
             </div>
             <button
               className="scroll-btn right"
               onClick={() => handleScroll(index, "right")}
             >
-              <i class="fa-solid fa-arrow-right"></i>
+              <i className="fa-solid fa-arrow-right"></i>
             </button>
           </div>
         </>
