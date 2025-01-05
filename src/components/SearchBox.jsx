@@ -11,7 +11,7 @@ export default function SearchBox() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    navigate('');
+    navigate(`movie/search/${intputData}`);
     setInputData("");
   }
 

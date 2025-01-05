@@ -8,7 +8,7 @@ import imgUrl from "../utills/imgUrl";
 import Loading from "./Loading";
 import NotFound from "./NotFound";
 
-export default function MovieGenre() {
+export default function MovieSearch() {
   const { genreId } = useParams();
   const {
     data: genreList,
