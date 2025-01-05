@@ -174,6 +174,46 @@ form input {
   color: #888;
 }
 
+/* *********************************************************************************** */
+
+/* Login */
+form label {
+  margin-right: 1rem;
+}
+
+/* Loading */
+.loading {
+  padding-left: 3rem;
+}
+
+.loading img {
+  width: 140px;
+  object-fit: cover;
+  animation: 3s ease-in-out popcorn infinite;
+}
+
+@keyframes popcorn {
+  0% {
+    rotate: 60deg;
+  }
+
+  50% {
+    rotate: -15deg;
+  }
+
+  100% {
+    rotate: 60deg;
+  }
+}
+
+/* notfound */
+.notfound img,
+.myPageMovie img {
+  width: 200px;
+}
+
+/* *********************************************************************************** */
+
 /* header */
 header {
   border-bottom: 1px solid #333;
@@ -218,6 +258,19 @@ header .search a input {
   width: 100%;
   margin: 0;
   padding: 0;
+}
+
+#searchBox form button.searchBtn {
+  border: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+
+#searchBox form button.searchBtn:hover {
+  opacity: 0.5;
 }
 
 header .search a i {
@@ -445,48 +498,4 @@ i span {
 .movieGenre h3,
 .movieGenre p {
   display: none;
-}
-
-/* Login */
-form label {
-  margin-right: 1rem;
-}
-
-form button {
-  border: none;
-  margin: 2rem 0;
-}
-form button:hover {
-  opacity: 0.5;
-}
-
-/* Loading */
-.loading {
-  padding-left: 3rem;
-}
-
-.loading img {
-  width: 140px;
-  object-fit: cover;
-  animation: 3s ease-in-out popcorn infinite;
-}
-
-@keyframes popcorn {
-  0% {
-    rotate: 60deg;
-  }
-
-  50% {
-    rotate: -15deg;
-  }
-
-  100% {
-    rotate: 60deg;
-  }
-}
-
-/* notfound */
-.notfound img,
-.myPageMovie img {
-  width: 200px;
 }
