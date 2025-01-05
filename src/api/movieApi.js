@@ -21,6 +21,11 @@ const movieApi = {
     const response = await api.get(`/discover/movie?with_genres=${genreId}?&`);
     return response.data.results;
   },
+  // 5. 검색 GET
+  getMovieSerachByInputValue: async (inputValue) => {
+    const response = await api.get(`/search/movie?query=${inputValue}&`);
+    return response.data.results;
+  },
 };
 
 export default movieApi;
