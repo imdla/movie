@@ -2,19 +2,18 @@ import { Link, useParams } from "react-router-dom";
 
 import movieApi from "../api/movieApi";
 import useMovieApi from "../hooks/useMovieApi";
-import { genreTransWord } from "../utills/movieUtils";
 import imgUrl from "../utills/imgUrl";
 
 import Loading from "./Loading";
 import NotFound from "./NotFound";
 
 export default function MovieSearch() {
-  const { genreId } = useParams();
+  const { inputValue } = useParams();
   const {
-    data: genreList,
+    data: searchList,
     loading,
     error,
-  } = useMovieApi(movieApi.getMovieGenres, genreId);
+  } = useMovieApi(movieApi.getMovieSerachByInputValue, inputValue);
 
   if (loading) {
     return <Loading></Loading>;
@@ -23,8 +22,8 @@ export default function MovieSearch() {
     return <NotFound></NotFound>;
   }
 
-  const genreItems = genreList.map((genreItem) => {
-    const { id, poster_path } = genreItem;
+  const searchItems = searchList.map((item) => {
+    const { id, poster_path } = item;
     return (
       <li className="flex-center" key={id}>
         <Link to={`/movie/detail/${id}`}>
@@ -36,9 +35,9 @@ export default function MovieSearch() {
 
   return (
     <div className="container movieGenre">
-      <h2>{genreId == 16 ? genreTransWord[0] : genreTransWord[1]}</h2>
+      <h2>{inputValue}</h2>
       <ul className="ulTag flex-center flex-wrap justy-around movieGenreList">
-        {genreItems}
+        {searchItems}
       </ul>
     </div>
   );

@@ -72,11 +72,11 @@ export default function MovieDetail() {
           <h1>{title}</h1>
           <button onClick={handleClick}>
             {isSaved ? (
-              <i class="fa-solid fa-x">
+              <i className="fa-solid fa-x">
                 <span> 저장 취소</span>
               </i>
             ) : (
-              <i class="fa-solid fa-plus">
+              <i className="fa-solid fa-plus">
                 {" "}
                 <span> 저장</span>
               </i>

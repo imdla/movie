@@ -8,6 +8,7 @@ import MovieLists from "../pages/MovieList";
 import MovieType from "../pages/MovieType";
 import MovieDetail from "../pages/MovieDetail";
 import MovieGenre from "../pages/MovieGenre";
+import MovieSearch from "../pages/MovieSearch";
 
 import NotFound from "../pages/NotFound";
 import Loading from "../pages/Loading";
@@ -38,8 +39,8 @@ const router = createBrowserRouter([
         element: <MovieGenre />,
       },
       {
-        path: "movie/search/:searchValue",
-        element: <MovieGenre />,
+        path: "movie/search/:inputValue",
+        element: <MovieSearch />,
       },
       {
         path: "login",
