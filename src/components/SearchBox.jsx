@@ -17,8 +17,8 @@ export default function SearchBox() {
 
   return (
     <div id="searchBox">
-      <form onSubmit={handleSubmit}>
-        <button onClick={handleSubmit} className="searchBtn">
+      <form onSubmit={handleSubmit} method="get">
+        <button onClick={handleSubmit} type="submit" className="searchBtn">
           <i className="fa-solid fa-magnifying-glass"></i>
         </button>
 

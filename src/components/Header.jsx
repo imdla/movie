@@ -18,9 +18,7 @@ export default function Header() {
         <nav>
           <ul className="ulTag flex-wrap flex-center">
             <li className="search">
-              <Link to={"/"}>
-                <SearchBox></SearchBox>
-              </Link>
+              <SearchBox></SearchBox>
             </li>
             <li>
               <Link to={"/login"}>
