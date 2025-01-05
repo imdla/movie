@@ -8,17 +8,17 @@ export default function SearchBox() {
   }
 
   function handleSubmit(e) {
-    e.prventDefault();
-    console.log(intputData);
+    e.preventDefault();
     setInputData("");
   }
 
   return (
     <div id="searchBox">
       <form onSubmit={handleSubmit}>
-        <button className="searchBtn">
+        <button onClick={handleSubmit} className="searchBtn">
           <i className="fa-solid fa-magnifying-glass"></i>
         </button>
+
         <input
           type="text"
           name="searchInput"
