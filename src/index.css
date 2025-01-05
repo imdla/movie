@@ -268,9 +268,12 @@ header .search input {
   border-radius: 0;
 }
 
-
 #searchBox form button.searchBtn:hover {
   opacity: 0.5;
+}
+
+#searchBox form button.searchBtn:focus {
+  outline: none;
 }
 
 header .search i {
