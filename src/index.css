@@ -335,6 +335,7 @@ header .search i {
   position: relative;
 }
 
+.typeContent h3,
 .typeContent p {
   display: none;
 }
