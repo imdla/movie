@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import SearchBox from "./SearchBox";
 
 export default function Header() {
   const { isLoggedIn, userName } = useSelector((state) => state.auth.user);
@@ -18,15 +19,7 @@ export default function Header() {
           <ul className="ulTag flex-wrap flex-center">
             <li className="search">
               <Link to={"/"}>
-                <form action="">
-                  <i class="fa-solid fa-magnifying-glass"></i>
-                  <input
-                    type="text"
-                    name="searchInput"
-                    id="searchInput"
-                    placeholder="검색"
-                  />
-                </form>
+                <SearchBox></SearchBox>
               </Link>
             </li>
             <li>
