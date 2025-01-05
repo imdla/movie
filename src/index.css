@@ -118,6 +118,10 @@ a {
   box-sizing: border-box;
 }
 
+div.container {
+  min-height: 50vh;
+}
+
 .ulTag {
   display: flex;
   list-style-type: none;
