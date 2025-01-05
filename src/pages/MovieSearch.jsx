@@ -6,6 +6,7 @@ import imgUrl from "../utills/imgUrl";
 
 import Loading from "./Loading";
 import NotFound from "./NotFound";
+import NoContent from "./NoContent";
 
 export default function MovieSearch() {
   const { inputValue } = useParams();
@@ -16,10 +17,14 @@ export default function MovieSearch() {
   } = useMovieApi(movieApi.getMovieSerachByInputValue, inputValue);
 
   if (loading) {
-    return <Loading></Loading>;
+    return <Loading />;
   }
   if (error) {
-    return <NotFound></NotFound>;
+    return <NotFound />;
+  }
+
+  if (searchList.length == 0) {
+    return <NoContent inputValue={inputValue}/>;
   }
 
   const searchItems = searchList.map((item) => {
