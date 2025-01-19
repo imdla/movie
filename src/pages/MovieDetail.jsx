@@ -41,7 +41,7 @@ export default function MovieDetail() {
     return <NotFound></NotFound>;
   }
 
-  const { title, poster_path, vote_average, overview, genres } = movieItem;
+  const { title, poster_path, backdrop_path, vote_average, overview, genres } = movieItem;
   const genreItem = genres.map((genre) => {
     return <li key={genre.id}>{genre.name}</li>;
   });
@@ -68,6 +68,7 @@ export default function MovieDetail() {
       <h2>Movie Detail</h2>
       <div className="flex-center movieDetail">
         <img src={`${imgUrl()}${poster_path}`} alt="" />
+        <img src={`${imgUrl()}${backdrop_path}`} alt="" />
         <div>
           <h1>{title}</h1>
           <button onClick={handleClick}>
