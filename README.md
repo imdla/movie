@@ -1,6 +1,9 @@
 # TMDB API를 이용한 영화 추천 페이지
 
 React의 숙련도 향상을 위해 진행한 TMDB API 활용 영화 추천 홈페이지
+
+<br/>
+
 ![Main Image](./public/main.png)
 
 <br/>
