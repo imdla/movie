@@ -1,12 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Signup() {
   const dispatch = useDispatch();
-  const [formData, setFormData] = useState({ name: "", password: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    passwordCheck: "",
+  });
+  const [isSame, setIsSame] = useState("비밀번호를 입력해주세요.");
   const { isLoggedIn, userName, userPassword } = useSelector(
     (state) => state.auth.user
   );
+
+  useEffect(() => {
+    const { password, passwordCheck } = formData;
+
+    if (password === "" || passwordCheck === "") {
+      setIsSame("비밀번호를 입력해주세요.");
+    } else if (password === passwordCheck) {
+      setIsSame("비밀번호가 일치합니다.");
+    } else {
+      setIsSame("비밀번호가 일치하지 않습니다.");
+    }
+  }, [formData]);
 
   function handleChange(e) {
     return setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -46,6 +64,7 @@ export default function Signup() {
             type="text"
             id="name"
             name="name"
+            required
             value={formData.name}
             onChange={handleChange}
           />
@@ -57,6 +76,7 @@ export default function Signup() {
             type="email"
             id="email"
             name="email"
+            required
             value={formData.email}
             onChange={handleChange}
           />
@@ -68,6 +88,7 @@ export default function Signup() {
             type="password"
             id="password"
             name="password"
+            required
             value={formData.password}
             onChange={handleChange}
           />
@@ -79,10 +100,12 @@ export default function Signup() {
             type="password"
             id="passwordCheck"
             name="passwordCheck"
+            required
             value={formData.passwordCheck}
             onChange={handleChange}
           />
         </div>
+        <p id="feedback">{isSame}</p>
 
         <button>회원가입</button>
       </form>
