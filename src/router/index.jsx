@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import RootLayout from "../layout/RootLayout";
 
+import Signup from "../pages/Signup";
 import Login from "../pages/Login";
 import MyPage from "../pages/MyPage";
 
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "movie/search/:inputValue",
         element: <MovieSearch />,
+      },
+      {
+        path: "signup",
+        element: <Signup />,
       },
       {
         path: "login",
