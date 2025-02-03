@@ -290,6 +290,10 @@ header .search i {
   background-color: #f82f62;
 }
 
+.myPage a {
+  font-weight: none;
+}
+
 .myPage:hover {
   background-color: #de2a60;
 }
