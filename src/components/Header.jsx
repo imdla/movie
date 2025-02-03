@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import SearchBox from "./SearchBox";
 
@@ -26,11 +26,17 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link to={"/mypage"}>
-                <h4 className="myPage">
-                  {isLoggedIn ? `${userName}님` : "MY PAGE"}
-                </h4>
-              </Link>
+              <h4 className="myPage">
+                {isLoggedIn ? (
+                  <Link to={"/mypage"}>
+                    <h4>{userName}님</h4>
+                  </Link>
+                ) : (
+                  <Link to={"/signup"}>
+                    <h4>회원가입</h4>
+                  </Link>
+                )}
+              </h4>
             </li>
           </ul>
         </nav>
