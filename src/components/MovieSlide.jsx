@@ -32,6 +32,7 @@ export default function MovieMain() {
       return (
         <li key={movieItem.id}>
           <Link to={`/movie/detail/${id}`}>
+            <div className={styles.content}>hello</div>
             <img src={`${imgUrl}${backdrop_path}`} alt="" />
           </Link>
         </li>
