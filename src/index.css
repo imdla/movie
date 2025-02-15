@@ -84,6 +84,10 @@ a {
   color: #dcdcdc;
 }
 
+li {
+  list-style-type: none;
+}
+
 .flex-center {
   display: flex;
   align-items: center;
