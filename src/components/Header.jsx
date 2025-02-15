@@ -7,15 +7,13 @@ export default function Header() {
   const { isLoggedIn, userName } = useSelector((state) => state.auth.user);
 
   return (
-    <header className="container">
-      <div className="flex-center flex-wrap justy-between ">
-        <div>
-          <Link to={"/"}>
-            <h1 className="text-center logo">
-              <img src="./public/logo.png" alt="logo" />
-            </h1>
-          </Link>
-        </div>
+    <header>
+      <div className="container flex-center flex-wrap justy-between ">
+        <Link to={"/"}>
+          <h1 className="text-center logo">
+            <img src="./public/logo.png" alt="logo" />
+          </h1>
+        </Link>
 
         <nav>
           <ul className="ulTag flex-wrap flex-center">
@@ -44,7 +42,7 @@ export default function Header() {
         </nav>
       </div>
 
-      <div>
+      <div className="container">
         <ul className="flex-center flex-wrap justy-start ulTag hash">
           <li>
             <Link to={"movie/now_playing"}># 현재 상영</Link>

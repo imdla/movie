@@ -34,6 +34,7 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin: 0;
 }
 
 button {
@@ -172,6 +173,7 @@ form input {
 
 .logo img {
   width: 84px;
+  margin: 0;
 }
 
 .gray {
@@ -219,8 +221,16 @@ form label {
 /* *********************************************************************************** */
 
 /* header */
-header {
+header > div:first-child {
   border-bottom: 1px solid #333;
+}
+
+header > div.container {
+  min-height: auto;
+}
+
+header nav ul {
+  margin: 0;
 }
 
 header nav h4 {
