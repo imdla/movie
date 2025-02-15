@@ -38,5 +38,5 @@ export default function MovieMain() {
     }
   });
 
-  return <ul>{movieItems}</ul>;
+  return <ul className="main">{movieItems}</ul>;
 }

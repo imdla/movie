@@ -4,7 +4,7 @@ import { movieTypeList } from "../utills/movieUtils";
 import { typeAmount } from "../utills/movieUtils";
 
 import MovieListItem from "../components/MovieListItem";
-import MovieMain from "../components/MovieMain";
+import MovieSlide from "../components/MovieSlide";
 
 export default function MovieLists() {
   const navigate = useNavigate();
@@ -65,7 +65,7 @@ export default function MovieLists() {
 
   return (
     <>
-      <MovieMain />
+      <MovieSlide />
       <div>{movieTypes}</div>
     </>
   );
