@@ -13,8 +13,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  height: 100vh;
 }
 
 a {
@@ -221,8 +219,17 @@ form label {
 /* *********************************************************************************** */
 
 /* header */
+:root {
+  position: relative;
+}
+
 header > div:first-child {
+  background-color: #242424;
   border-bottom: 1px solid #333;
+  position: sticky !important;
+  top: 0;
+  box-shadow: 0 2px 5px #0000001a;
+  z-index: 1002;
 }
 
 header > div.container {
