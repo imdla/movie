@@ -63,5 +63,12 @@ export default function MovieLists() {
     );
   });
 
-  return <>{movieTypes}</>;
+  return (
+    <>
+      <div>
+        
+      </div>
+      <div>{movieTypes}</div>
+    </>
+  );
 }

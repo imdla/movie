@@ -173,7 +173,7 @@ form input {
 }
 
 .logo img {
-  width: 84px;
+  width: 68px;
   margin: 0;
 }
 
@@ -229,6 +229,11 @@ header {
   top: 0;
   box-shadow: 0 2px 5px #0000001a;
   z-index: 1002;
+}
+
+header .container {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 header > div.container {
