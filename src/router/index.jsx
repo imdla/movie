@@ -5,7 +5,7 @@ import Signup from "../pages/Signup";
 import Login from "../pages/Login";
 import MyPage from "../pages/MyPage";
 
-import MovieLists from "../pages/MovieList";
+import MovieList from "../pages/MovieList";
 import MovieType from "../pages/MovieType";
 import MovieDetail from "../pages/MovieDetail";
 import MovieGenre from "../pages/MovieGenre";
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <MovieLists />,
+        element: <MovieList />,
       },
       {
         path: "movie",
