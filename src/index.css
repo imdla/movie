@@ -170,8 +170,8 @@ form input {
   height: 100vh;
 }
 
-.logo {
-  font-size: 24px;
+.logo img {
+  width: 84px;
 }
 
 .gray {
