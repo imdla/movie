@@ -3,18 +3,17 @@ import { Link, useParams } from "react-router-dom";
 import movieApi from "../api/movieApi";
 import useMovieApi from "../hooks/useMovieApi";
 import { genreTransWord } from "../utills/movieUtils";
-import imgUrl from "../utills/imgUrl";
+import { imgUrl } from "../utills/imgUrl";
 
 import Loading from "./Loading";
 import NotFound from "./NotFound";
 
 export default function MovieGenre() {
   const { genreId } = useParams();
-  const {
-    data: genreList,
-    loading,
-    error,
-  } = useMovieApi(movieApi.getMovieGenres, genreId);
+  const { data: genreList, loading, error } = useMovieApi(
+    movieApi.getMovieGenres,
+    genreId
+  );
 
   if (loading) {
     return <Loading></Loading>;
@@ -28,7 +27,7 @@ export default function MovieGenre() {
     return (
       <li className="flex-center" key={id}>
         <Link to={`/movie/detail/${id}`}>
-          <img src={`${imgUrl()}${poster_path}`} alt="" />
+          <img src={`${imgUrl}${poster_path}`} alt="" />
         </Link>
       </li>
     );

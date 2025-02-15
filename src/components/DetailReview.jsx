@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 
 import movieApi from "../api/movieApi";
 import useMovieApi from "../hooks/useMovieApi";
-import imgUrl from "../utills/imgUrl";
+import { imgUrl } from "../utills/imgUrl";
 import { reviewBasicImgUrl } from "../utills/movieUtils";
 
 import Loading from "../pages/Loading";
@@ -11,11 +11,10 @@ import NotFound from "../pages/NotFound";
 export default function MovieReviews() {
   const { movieId } = useParams();
 
-  const {
-    data: movieReviewList,
-    loading,
-    error,
-  } = useMovieApi(movieApi.getMovieByIdReview, movieId);
+  const { data: movieReviewList, loading, error } = useMovieApi(
+    movieApi.getMovieByIdReview,
+    movieId
+  );
 
   if (loading) {
     return <Loading></Loading>;
@@ -28,7 +27,7 @@ export default function MovieReviews() {
     const { id, author, content, author_details } = movieReview;
 
     let imgSrc = author_details.avatar_path
-      ? `${imgUrl()}${author_details.avatar_path}`
+      ? `${imgUrl}${author_details.avatar_path}`
       : reviewBasicImgUrl;
 
     return (

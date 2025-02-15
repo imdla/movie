@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { saved, remove } from "../store/slices/movieSaveSlice";
 import movieApi from "../api/movieApi";
 import useMovieApi from "../hooks/useMovieApi";
-import imgUrl from "../utills/imgUrl";
+import { imgUrl } from "../utills/imgUrl";
 
 import DetailReview from "../components/DetailReview";
 import Loading from "./Loading";
@@ -20,11 +20,10 @@ export default function MovieDetail() {
   const { isLoggedIn } = useSelector((state) => state.auth.user);
   const { saveMovieId } = useSelector((state) => state.movieSave);
 
-  const {
-    data: movieItem,
-    loading,
-    error,
-  } = useMovieApi(movieApi.getMovieById, movieId);
+  const { data: movieItem, loading, error } = useMovieApi(
+    movieApi.getMovieById,
+    movieId
+  );
 
   useEffect(() => {
     let saveValue = saveMovieId.find((id) => {
@@ -67,7 +66,7 @@ export default function MovieDetail() {
     <div className="container">
       <h2>Movie Detail</h2>
       <div className="flex-center movieDetail">
-        <img src={`${imgUrl()}${poster_path}`} alt="" />
+        <img src={`${imgUrl}${poster_path}`} alt="" />
         <div>
           <h1>{title}</h1>
           <button onClick={handleClick}>

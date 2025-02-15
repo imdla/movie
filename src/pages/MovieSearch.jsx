@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 
 import movieApi from "../api/movieApi";
 import useMovieApi from "../hooks/useMovieApi";
-import imgUrl from "../utills/imgUrl";
+import { imgUrl } from "../utills/imgUrl";
 
 import Loading from "./Loading";
 import NotFound from "./NotFound";
@@ -10,11 +10,10 @@ import NoContent from "./NoContent";
 
 export default function MovieSearch() {
   const { inputValue } = useParams();
-  const {
-    data: searchList,
-    loading,
-    error,
-  } = useMovieApi(movieApi.getMovieSerachByInputValue, inputValue);
+  const { data: searchList, loading, error } = useMovieApi(
+    movieApi.getMovieSerachByInputValue,
+    inputValue
+  );
 
   if (loading) {
     return <Loading />;
@@ -24,7 +23,7 @@ export default function MovieSearch() {
   }
 
   if (searchList.length == 0) {
-    return <NoContent inputValue={inputValue}/>;
+    return <NoContent inputValue={inputValue} />;
   }
 
   const searchItems = searchList.map((item) => {
@@ -32,7 +31,7 @@ export default function MovieSearch() {
     return (
       <li className="flex-center" key={id}>
         <Link to={`/movie/detail/${id}`}>
-          <img src={`${imgUrl()}${poster_path}`} alt="" />
+          <img src={`${imgUrl}${poster_path}`} alt="" />
         </Link>
       </li>
     );

@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
 import movieApi from "../api/movieApi";
-import imgUrl from "../utills/imgUrl";
+import { imgUrl } from "../utills/imgUrl";
 
 import EmptyMyPage from "../components/SavedEmpty";
 
@@ -43,7 +43,7 @@ export default function MyPage() {
     return (
       <li key={item.imdb_id}>
         <Link to={`/movie/detail/${item.id}`}>
-          <img src={`${imgUrl()}${item.poster_path}`} alt="" />
+          <img src={`${imgUrl}${item.poster_path}`} alt="" />
         </Link>
       </li>
     );

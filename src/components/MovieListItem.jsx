@@ -3,17 +3,16 @@ import { Link } from "react-router-dom";
 
 import movieApi from "../api/movieApi";
 import useMovieApi from "../hooks/useMovieApi";
-import imgUrl from "../utills/imgUrl";
+import { imgUrl } from "../utills/imgUrl";
 
 import Loading from "../pages/Loading";
 import NotFound from "../pages/NotFound";
 
 export default function MovieItem({ listType, count }) {
-  const {
-    data: movieList,
-    loading,
-    error,
-  } = useMovieApi(movieApi.getMovies, listType);
+  const { data: movieList, loading, error } = useMovieApi(
+    movieApi.getMovies,
+    listType
+  );
 
   if (loading) {
     return <Loading></Loading>;
@@ -33,7 +32,7 @@ export default function MovieItem({ listType, count }) {
           <h1 className="grade">{cnt}</h1>
 
           <Link to={`/movie/detail/${id}`}>
-            <img src={`${imgUrl()}${poster_path}`} alt="" />
+            <img src={`${imgUrl}${poster_path}`} alt="" />
             <div>
               <h3>{title}</h3>
               <p>{overview}</p>

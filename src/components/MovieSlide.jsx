@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styles from "../css/MovieSlide.Module.css";
 
 import useMovieApi from "../hooks/useMovieApi";
 import movieApi from "../api/movieApi";
-import imgUrl from "../utills/imgUrl";
+import { imgUrl } from "../utills/imgUrl";
 
 import Loading from "../pages/Loading";
 import NotFound from "../pages/NotFound";
@@ -31,12 +32,12 @@ export default function MovieMain() {
       return (
         <li key={movieItem.id}>
           <Link to={`/movie/detail/${id}`}>
-            <img src={`${imgUrl()}${backdrop_path}`} alt="" />
+            <img src={`${imgUrl}${backdrop_path}`} alt="" />
           </Link>
         </li>
       );
     }
   });
 
-  return <ul className="main">{movieItems}</ul>;
+  return <ul className={styles.movieSlide}>{movieItems}</ul>;
 }
