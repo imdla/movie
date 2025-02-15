@@ -10,9 +10,9 @@ export default function Header() {
     <header>
       <div className="container flex-center flex-wrap justy-between ">
         <Link to={"/"}>
-          <h1 className="text-center logo">
+          <div className="text-center logo">
             <img src="./public/logo.png" alt="logo" />
-          </h1>
+          </div>
         </Link>
 
         <ul className="flex-center flex-wrap justy-start ulTag hash">
