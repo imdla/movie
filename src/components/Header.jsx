@@ -11,7 +11,9 @@ export default function Header() {
       <div className="flex-center flex-wrap justy-between ">
         <div>
           <Link to={"/"}>
-            <h1 className="text-center logo">Movie Page</h1>
+            <h1 className="text-center logo">
+              <img src="./public/logo.png" alt="logo" />
+            </h1>
           </Link>
         </div>
 
