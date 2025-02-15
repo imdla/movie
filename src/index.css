@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
+#root {
+  position: relative;
+}
 :root {
   font-family: "Roboto", sans-serif;
   line-height: 1.5;
@@ -19,6 +21,7 @@ a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
+  display: block;
 }
 
 body {
@@ -219,11 +222,7 @@ form label {
 /* *********************************************************************************** */
 
 /* header */
-:root {
-  position: relative;
-}
-
-header > div:first-child {
+header {
   background-color: #242424;
   border-bottom: 1px solid #333;
   position: sticky !important;
