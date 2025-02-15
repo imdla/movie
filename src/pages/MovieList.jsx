@@ -4,10 +4,10 @@ import { movieTypeList } from "../utills/movieUtils";
 import { typeAmount } from "../utills/movieUtils";
 
 import MovieListItem from "../components/MovieListItem";
+import MovieMain from "../components/MovieMain";
 
 export default function MovieLists() {
   const navigate = useNavigate();
-
   const scrollRefs = useRef([]);
 
   const handleScroll = (index, direction) => {
@@ -65,9 +65,7 @@ export default function MovieLists() {
 
   return (
     <>
-      <div>
-        
-      </div>
+      <MovieMain />
       <div>{movieTypes}</div>
     </>
   );
