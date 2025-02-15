@@ -326,6 +326,8 @@ header .search i {
 .hash li {
   margin-right: 0.5rem;
   min-height: 48px;
+  display: flex;
+  align-items: center;
 }
 
 .hash li a {
