@@ -354,13 +354,19 @@ header .search i {
   width: 200px;
 }
 
+.movieList li a img {
+  transition: all 0.3s ease-in-out;
+}
+
+.movieList li a img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 6px #adadad;
+  z-index: -999;
+}
+
 .typeTitle {
   margin-right: 1rem;
 }
-
-/* .typeContent {
-  padding: 0 2rem;
-} */
 
 .left300 {
   left: -300px;
@@ -380,6 +386,7 @@ header .search i {
   top: 230px;
   left: -2px;
   text-shadow: 1px 1px 2px #333;
+  z-index: 999;
 }
 
 .scroll-wrapper {
