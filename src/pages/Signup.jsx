@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import style from "../css/Signup.module.css";
 
 export default function Signup() {
   const dispatch = useDispatch();
@@ -54,8 +55,8 @@ export default function Signup() {
   }
 
   return (
-    <div className="container">
-      <h2>Signup Page</h2>
+    <div id="signup" className="container">
+      <h2>회원가입</h2>
 
       <form className="flex-center flex-col" action="" onSubmit={handleSubmit}>
         <div className="marginBttom flex-center">
@@ -94,7 +95,7 @@ export default function Signup() {
           />
         </div>
 
-        <div className="marginBttom flex-center">
+        <div className="flex-center">
           <label htmlFor="password">PASSWORD CHECK</label>
           <input
             type="password"

@@ -204,8 +204,18 @@ form label {
   width: 320px;
 }
 
-#login form button:hover {
+form button:hover {
   box-shadow: 0 0 5px #f9f9f9;
+}
+
+/* Signup */
+#signup form label {
+  width: 10rem;
+}
+
+#signup form button {
+  width: 390px;
+  margin: 1rem 0;
 }
 
 /* Loading */
