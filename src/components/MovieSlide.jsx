@@ -53,12 +53,11 @@ export default function MovieMain() {
         <li key={movieItem.id}>
           <Link to={`/movie/detail/${id}`}>
             <div className={styles.content}>
-              <div>
-                <p>{release_date.slice(0, 4)}</p>
-                {/* <p>{genre_ids}</p> */}
-                <p>{vote_average}</p>
+              <div className={styles.detail}>
+                <p>{release_date.slice(0, 4)}년</p>
+                <p>{"⭐".repeat(Math.round(vote_average / 2))}</p>
               </div>
-              <p>{title}</p>
+              <h1 className={styles.title}>{title}</h1>
               <p>{overview}</p>
             </div>
             <img src={`${imgUrl}${backdrop_path}`} alt="" />
