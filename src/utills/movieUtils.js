@@ -10,7 +10,7 @@ export const movieTypeListKr = [
 
 export const typeAmount = 15;
 
-export const typeListAmount = 5;
+export const typeListAmount = 15;
 
 export const genreTransWord = ["애니메이션", "스릴러"];
 

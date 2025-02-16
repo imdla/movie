@@ -33,10 +33,10 @@ export default function MovieItem({ listType, count }) {
 
           <Link to={`/movie/detail/${id}`}>
             <img src={`${imgUrl}${poster_path}`} alt="" />
-            <div>
+            {/* <div>
               <h3>{title}</h3>
               <p>{overview}</p>
-            </div>
+            </div> */}
           </Link>
         </li>
       );

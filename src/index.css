@@ -443,8 +443,6 @@ header .search i {
 .movieType li {
   position: relative;
   margin-top: 2rem;
-  width: 100%;
-  display: flex;
 }
 
 .movieType .grade {

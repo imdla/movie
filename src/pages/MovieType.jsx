@@ -23,7 +23,7 @@ export default function MovieType() {
     <div className="container movieType">
       <h2>{movieTitle}</h2>
       <ul className="ulTag flex-center flex-wrap">
-        {movieItems}
+        <div className="flex-center flex-wrap">{movieItems}</div>
         <button onClick={handleClick}>더보기</button>
       </ul>
     </div>
