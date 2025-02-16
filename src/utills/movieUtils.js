@@ -2,6 +2,12 @@ import _ from "lodash";
 
 export const movieTypeList = ["now_playing", "popular", "top_rated"];
 
+export const movieTypeListKr = [
+  "현재 상영중인 영화",
+  "실시간 인기 추천",
+  "순위별 콘텐츠",
+];
+
 export const typeAmount = 15;
 
 export const typeListAmount = 5;
