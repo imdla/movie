@@ -188,8 +188,24 @@ form input {
 /* *********************************************************************************** */
 
 /* Login */
+#login {
+  height: calc(100vh - 80px - 177px);
+}
+
+#login form {
+  height: 82%;
+}
+
 form label {
   margin-right: 1rem;
+}
+
+#login form button {
+  width: 320px;
+}
+
+#login form button:hover {
+  box-shadow: 0 0 5px #f9f9f9;
 }
 
 /* Loading */

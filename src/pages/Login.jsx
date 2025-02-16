@@ -40,8 +40,8 @@ export default function Login() {
   }
 
   return (
-    <div className="container">
-      <h2>Login Page</h2>
+    <div id="login" className="container">
+      <h2>로그인</h2>
 
       <form className="flex-center flex-col" action="" onSubmit={handleSubmit}>
         <div className="marginBttom flex-center">
