@@ -9,29 +9,31 @@ export default function Header() {
   return (
     <header>
       <div className="container flex-center flex-wrap justy-between ">
-        <Link to={"/"}>
-          <div className="text-center logo">
-            <img src="./public/logo.png" alt="logo" />
-          </div>
-        </Link>
+        <div className="flex-center">
+          <Link to={"/"}>
+            <div className="text-center logo">
+              <img src="./public/logo.png" alt="logo" />
+            </div>
+          </Link>
 
-        <ul className="flex-center flex-wrap justy-start ulTag hash">
-          <li>
-            <Link to={"movie/now_playing"}># 현재 상영</Link>
-          </li>
-          <li>
-            <Link to={"movie/popular"}># 인기있는</Link>
-          </li>
-          <li>
-            <Link to={"movie/top_rated"}># 순위별</Link>
-          </li>
-          <li>
-            <Link to={"movie/genre/16"}># 애니메이션</Link>
-          </li>
-          <li>
-            <Link to={"movie/genre/53"}># 스릴러</Link>
-          </li>
-        </ul>
+          <ul className="flex-center flex-wrap justy-start ulTag hash">
+            <li>
+              <Link to={"movie/now_playing"}># 현재 상영</Link>
+            </li>
+            <li>
+              <Link to={"movie/popular"}># 인기있는</Link>
+            </li>
+            <li>
+              <Link to={"movie/top_rated"}># 순위별</Link>
+            </li>
+            <li>
+              <Link to={"movie/genre/16"}># 애니메이션</Link>
+            </li>
+            <li>
+              <Link to={"movie/genre/53"}># 스릴러</Link>
+            </li>
+          </ul>
+        </div>
 
         <nav>
           <ul className="ulTag flex-wrap flex-center">
