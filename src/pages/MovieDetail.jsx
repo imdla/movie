@@ -65,7 +65,7 @@ export default function MovieDetail() {
   }
   return (
     <div className="container">
-      <h2>상세보기기</h2>
+      <h2>상세보기</h2>
       <div className="flex-center movieDetail">
         <img src={`${imgUrl}${poster_path}`} alt="" />
         <div>

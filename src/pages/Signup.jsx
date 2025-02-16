@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import style from "../css/Signup.module.css";
 
 export default function Signup() {
   const dispatch = useDispatch();

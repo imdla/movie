@@ -38,7 +38,6 @@ export default function MovieMain() {
   let cnt = 0;
   const movieItems = movieList.map((movieItem) => {
     if (cnt < 5) {
-      console.log(movieItem);
       cnt += 1;
       const {
         id,

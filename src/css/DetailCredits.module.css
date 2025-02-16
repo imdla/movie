@@ -1,0 +1,18 @@
+.credit ul {
+  width: 100vw;
+}
+
+.credit img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.credit p {
+  font-size: 14px;
+  height: auto;
+  color: #aeaeae;
+  white-space: nowrap;
+  overflow: hidden;
+}

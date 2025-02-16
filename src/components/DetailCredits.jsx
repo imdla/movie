@@ -1,9 +1,12 @@
 import React from "react";
 import movieApi from "../api/movieApi";
 import useMovieApi from "../hooks/useMovieApi";
+import { imgUrl } from "../utills/imgUrl";
+import { reviewBasicImgUrl } from "../utills/movieUtils";
+import style from "../css/DetailCredits.module.css";
+
 import Loading from "../pages/Loading";
 import NotFound from "../pages/NotFound";
-import { imgUrl } from "../utills/imgUrl";
 
 export default function DetailCredits({ movieId }) {
   const { data: credits, loading, error } = useMovieApi(
@@ -18,22 +21,30 @@ export default function DetailCredits({ movieId }) {
     return <NotFound></NotFound>;
   }
 
+  let cnt = 0;
   const movieCredits = credits.map((person) => {
-    const { id, character, name, profile_path } = person;
+    if (cnt < 8) {
+      cnt += 1;
+      const { id, character, name, profile_path } = person;
 
-    return (
-      <li key={id}>
-        <img src={`${imgUrl}${profile_path}`} alt="" />
-        <p>{character}</p>
-        <p>{name}</p>
-      </li>
-    );
+      const imgSrc = profile_path
+        ? `${imgUrl}${profile_path}`
+        : reviewBasicImgUrl;
+
+      return (
+        <li key={id}>
+          <img src={`${imgSrc}`} alt="" />
+          <p>{character}</p>
+          <p>{name}</p>
+        </li>
+      );
+    }
   });
 
   return (
-    <>
+    <div className={style.credit}>
       <h2>출연진</h2>
-      <ul className="marginTop">{movieCredits}</ul>
-    </>
+      <ul className="marginTop flex-center justy-start">{movieCredits}</ul>
+    </div>
   );
 }
