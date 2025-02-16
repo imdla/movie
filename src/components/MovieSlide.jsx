@@ -38,14 +38,29 @@ export default function MovieMain() {
   let cnt = 0;
   const movieItems = movieList.map((movieItem) => {
     if (cnt < 5) {
+      console.log(movieItem);
       cnt += 1;
-      const { id, backdrop_path } = movieItem;
+      const {
+        id,
+        release_date,
+        vote_average,
+        title,
+        overview,
+        backdrop_path,
+      } = movieItem;
 
-      // 2012년 · 76분 · 청소년관람불가 · 한국
       return (
         <li key={movieItem.id}>
           <Link to={`/movie/detail/${id}`}>
-            <div className={styles.content}>hello</div>
+            <div className={styles.content}>
+              <div>
+                <p>{release_date.slice(0, 4)}</p>
+                {/* <p>{genre_ids}</p> */}
+                <p>{vote_average}</p>
+              </div>
+              <p>{title}</p>
+              <p>{overview}</p>
+            </div>
             <img src={`${imgUrl}${backdrop_path}`} alt="" />
           </Link>
         </li>
