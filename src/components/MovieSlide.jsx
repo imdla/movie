@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import styles from "../css/MovieSlide.Module.css";
 
@@ -41,6 +41,7 @@ export default function MovieMain() {
       cnt += 1;
       const { id, backdrop_path } = movieItem;
 
+      // 2012년 · 76분 · 청소년관람불가 · 한국
       return (
         <li key={movieItem.id}>
           <Link to={`/movie/detail/${id}`}>

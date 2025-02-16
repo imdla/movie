@@ -1,4 +1,5 @@
 import api from "./axios";
+import apiEn from "./axiosEn";
 
 const movieApi = {
   // 1. 리스트 GET
@@ -13,7 +14,7 @@ const movieApi = {
   },
   // 3. 개별 리뷰 GET
   getMovieByIdReview: async (movieId) => {
-    const response = await api.get(`/movie/${movieId}/reviews`);
+    const response = await apiEn.get(`/movie/${movieId}/reviews`);
     return response.data.results;
   },
   // 4. 장르 GET
