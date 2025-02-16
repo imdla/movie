@@ -53,7 +53,7 @@ export default function MovieReviews() {
 
   return (
     <>
-      <h2>Movie Review</h2>
+      <h2>후기</h2>
       <ul className="marginTop movieReviewUl">{moveReviews}</ul>
     </>
   );

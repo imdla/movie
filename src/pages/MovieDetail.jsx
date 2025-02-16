@@ -9,6 +9,7 @@ import useMovieApi from "../hooks/useMovieApi";
 import { imgUrl } from "../utills/imgUrl";
 
 import DetailReview from "../components/DetailReview";
+import DetailCredits from "../components/DetailCredits";
 import Loading from "./Loading";
 import NotFound from "./NotFound";
 
@@ -64,7 +65,7 @@ export default function MovieDetail() {
   }
   return (
     <div className="container">
-      <h2>Movie Detail</h2>
+      <h2>상세보기기</h2>
       <div className="flex-center movieDetail">
         <img src={`${imgUrl}${poster_path}`} alt="" />
         <div>
@@ -93,11 +94,14 @@ export default function MovieDetail() {
             <li className="ulTag gray">
               <p>{overview}</p>
             </li>
+
+            <li></li>
           </ul>
         </div>
       </div>
 
-      <DetailReview></DetailReview>
+      <DetailCredits movieId={movieId} />
+      <DetailReview />
     </div>
   );
 }

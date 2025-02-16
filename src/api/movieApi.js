@@ -27,6 +27,11 @@ const movieApi = {
     const response = await api.get(`/search/movie?query=${inputValue}&`);
     return response.data.results;
   },
+  // 6. 영화 제작 정보 GET
+  getMovieCredits: async (movieId) => {
+    const response = await api.get(`/movie/${movieId}/credits`);
+    return response.data.cast;
+  },
 };
 
 export default movieApi;
