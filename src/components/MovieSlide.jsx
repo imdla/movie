@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "../css/MovieSlide.Module.css";
 
@@ -12,14 +12,14 @@ import NotFound from "../pages/NotFound";
 export default function MovieMain() {
   const scrollRefs = useRef([]);
 
-  const handleScroll = (index, direction) => {
-    const scrollAmount = 600;
-    if (scrollRefs.current[index]) {
-      scrollRefs.current[index].scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      });
-    }
+  const handleScroll = (direction) => {
+    const scrollAmount = window.innerWidth;
+    const listNode = scrollRefs.current;
+
+    listNode.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
   };
 
   const listType = "popular";
@@ -56,16 +56,16 @@ export default function MovieMain() {
     <div className={styles.movieSlide}>
       <button
         className={`${styles.scrollBtn} ${styles.left}`}
-        onClick={() => handleScroll(index, "left")}
+        onClick={() => handleScroll("left")}
       >
         <i className="fa-solid fa-arrow-left"></i>
       </button>
 
-      <ul>{movieItems}</ul>
+      <ul ref={scrollRefs}>{movieItems}</ul>
 
       <button
         className={`${styles.scrollBtn} ${styles.right}`}
-        onClick={() => handleScroll(index, "right")}
+        onClick={() => handleScroll("right")}
       >
         <i className="fa-solid fa-arrow-right"></i>
       </button>
