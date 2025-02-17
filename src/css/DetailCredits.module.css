@@ -1,12 +1,24 @@
 .credit ul {
   width: 100vw;
+  display: flex;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 12px;
+}
+
+.credit ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .credit img {
-  width: 100px;
-  height: 100px;
+  width: 102px;
+  height: 102px;
   border-radius: 50%;
   object-fit: cover;
+  margin: 0;
+  margin-right: 2rem;
 }
 
 .credit p {

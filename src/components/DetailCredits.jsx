@@ -21,10 +21,7 @@ export default function DetailCredits({ movieId }) {
     return <NotFound></NotFound>;
   }
 
-  let cnt = 0;
   const movieCredits = credits.map((person) => {
-    if (cnt < 8) {
-      cnt += 1;
       const { id, character, name, profile_path } = person;
 
       const imgSrc = profile_path
@@ -38,7 +35,6 @@ export default function DetailCredits({ movieId }) {
           <p>{name}</p>
         </li>
       );
-    }
   });
 
   return (
