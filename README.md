@@ -4,7 +4,7 @@ React의 숙련도 향상을 위해 진행한 TMDB API 활용한 영화 추천 �
 
 <br/>
 
-![Main Image](./public/main.png)
+![Main Image](./public/movie_main.png)
 
 <br/>
 
