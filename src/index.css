@@ -505,10 +505,6 @@ header .search i {
   object-fit: cover;
 }
 
-.movieDetail > div {
-  padding: 2rem;
-}
-
 .movieDetail ul {
   padding: 0;
 }

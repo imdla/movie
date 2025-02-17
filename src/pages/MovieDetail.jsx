@@ -74,7 +74,7 @@ export default function MovieDetail() {
       <div className="flex-center flex-col movieDetail">
         <img src={`${imgUrl}${backdrop_path}`} alt="" />
         <img className="logo" src={`${imgUrl}${movieImage}`} alt="" />
-        <div>
+        <div className="container">
           <h1>{title}</h1>
           <button onClick={handleClick}>
             {isSaved ? (
