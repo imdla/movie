@@ -106,8 +106,10 @@ export default function MovieDetail() {
         </div>
       </div>
 
-      <div className="container movieDetailBox">
+      <div className="container">
         <DetailCredits movieId={movieId} />
+      </div>
+      <div className="container">
         <DetailReview />
       </div>
     </>
