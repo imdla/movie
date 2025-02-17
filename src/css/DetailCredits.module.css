@@ -1,9 +1,13 @@
+.credit {
+  position: relative;
+}
+
 .credit ul {
-  width: 100vw;
+  width: calc(100vw - 5rem);
+  overflow: hidden;
   display: flex;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  column-gap: 12px;
   padding: 0;
+  margin-top: 2rem;
 }
 
 .credit ul li {
@@ -11,15 +15,15 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-right: 3rem;
 }
 
 .credit img {
-  width: 102px;
-  height: 102px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   margin: 0;
-  margin-right: 2rem;
 }
 
 .credit p {
@@ -28,4 +32,29 @@
   color: #aeaeae;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.scrollBtn {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.left {
+  left: 0;
+  top: 50%;
+}
+
+.right {
+  right: 0;
+  top: 50%;
 }

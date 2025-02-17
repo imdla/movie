@@ -21,6 +21,14 @@ export default function MovieDetail() {
   const { isLoggedIn } = useSelector((state) => state.auth.user);
   const { saveMovieId } = useSelector((state) => state.movieSave);
 
+  useEffect(() => {
+    let saveValue = saveMovieId.find((id) => {
+      return id === movieId;
+    });
+
+    setIsSaved(isLoggedIn && saveValue ? true : false);
+  }, [isSaved]);
+
   const { data: movieItem, loading, error } = useMovieApi(
     movieApi.getMovieById,
     movieId
@@ -30,14 +38,6 @@ export default function MovieDetail() {
     movieApi.getMovieImage,
     movieId
   );
-
-  useEffect(() => {
-    let saveValue = saveMovieId.find((id) => {
-      return id === movieId;
-    });
-
-    setIsSaved(isLoggedIn && saveValue ? true : false);
-  }, [isSaved]);
 
   if (loading || loadingImg) {
     return <Loading></Loading>;
@@ -106,7 +106,7 @@ export default function MovieDetail() {
         </div>
       </div>
 
-      <div className="container">
+      <div className="container detailCredit">
         <DetailCredits movieId={movieId} />
       </div>
       <div className="container">
