@@ -1,7 +1,10 @@
-import { Configuration, openAiApi } from "openai";
-
-const openAiApi = new Configuration({
-  apiKey: import.meta.env.VITE_GPT_API_KEY,
-});
-
-export default openAiApi;
+export const openAiApi = async (text) => {
+  const response = await fetch("http://localhost:3001/api/translate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text }),
+  });
+  console.log(response);
+  const data = await response.json();
+  return data.translation;
+};

@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import movieApi from "../api/movieApi";
 import useMovieApi from "../hooks/useMovieApi";
@@ -7,6 +7,8 @@ import { reviewBasicImgUrl } from "../utills/movieUtils";
 
 import Loading from "../pages/Loading";
 import NotFound from "../pages/NotFound";
+
+import DetailReviewKr from "./DetailReviewKr";
 
 export default function MovieReviews() {
   const { movieId } = useParams();
@@ -54,6 +56,7 @@ export default function MovieReviews() {
   return (
     <>
       <h2>후기</h2>
+      <DetailReviewKr />
       <ul className="marginTop movieReviewUl">{moveReviews}</ul>
     </>
   );
