@@ -485,8 +485,24 @@ header .search i {
 }
 
 /* movieDetail */
+.movieDetail {
+  position: relative;
+}
+
 .movieDetail img {
-  width: 300px;
+  width: 100vw;
+  height: calc(100vh - 80px);
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.movieDetail .logo {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  width: 320px;
+  height: auto;
+  object-fit: cover;
 }
 
 .movieDetail > div {

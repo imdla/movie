@@ -26,6 +26,11 @@ export default function MovieDetail() {
     movieId
   );
 
+  const { data: movieImage, loadingImg, errorImg } = useMovieApi(
+    movieApi.getMovieImage,
+    movieId
+  );
+
   useEffect(() => {
     let saveValue = saveMovieId.find((id) => {
       return id === movieId;
@@ -34,14 +39,14 @@ export default function MovieDetail() {
     setIsSaved(isLoggedIn && saveValue ? true : false);
   }, [isSaved]);
 
-  if (loading) {
+  if (loading || loadingImg) {
     return <Loading></Loading>;
   }
-  if (error) {
+  if (error || errorImg) {
     return <NotFound></NotFound>;
   }
 
-  const { title, poster_path, vote_average, overview, genres } = movieItem;
+  const { title, backdrop_path, vote_average, overview, genres } = movieItem;
   const genreItem = genres.map((genre) => {
     return <li key={genre.id}>{genre.name}</li>;
   });
@@ -63,11 +68,12 @@ export default function MovieDetail() {
       }
     }
   }
+
   return (
-    <div className="container">
-      <h2>상세보기</h2>
-      <div className="flex-center movieDetail">
-        <img src={`${imgUrl}${poster_path}`} alt="" />
+    <>
+      <div className="flex-center flex-col movieDetail">
+        <img src={`${imgUrl}${backdrop_path}`} alt="" />
+        <img className="logo" src={`${imgUrl}${movieImage}`} alt="" />
         <div>
           <h1>{title}</h1>
           <button onClick={handleClick}>
@@ -100,8 +106,10 @@ export default function MovieDetail() {
         </div>
       </div>
 
-      <DetailCredits movieId={movieId} />
-      <DetailReview />
-    </div>
+      <div className="container movieDetailBox">
+        <DetailCredits movieId={movieId} />
+        <DetailReview />
+      </div>
+    </>
   );
 }

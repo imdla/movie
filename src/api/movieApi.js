@@ -32,6 +32,11 @@ const movieApi = {
     const response = await api.get(`/movie/${movieId}/credits`);
     return response.data.cast;
   },
+  // 7. 영화 이미지 리스트 GET
+  getMovieImage: async (movieId) => {
+    const response = await apiEn.get(`/movie/${movieId}/images`);
+    return response.data.logos[0].file_path;
+  },
 };
 
 export default movieApi;
