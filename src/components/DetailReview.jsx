@@ -56,7 +56,7 @@ export default function MovieReviews() {
   return (
     <>
       <h2>후기</h2>
-      <DetailReviewKr />
+      {/* <DetailReviewKr /> */}
       <ul className="marginTop movieReviewUl">{moveReviews}</ul>
     </>
   );
