@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import NoteCreateForm from "./NoteCreateForm";
+import NoteItems from "./NoteItems";
+import { useNavigate } from "react-router-dom";
 
 export default function MyPageNotation() {
+  const navigate = useNavigate();
   const [isCreating, setIsCreating] = useState(false);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -45,14 +48,7 @@ export default function MyPageNotation() {
         />
       )}
 
-      <div>
-        <ul>
-          <li>
-            <h3>title</h3>
-            <p>2025.02.18</p>
-          </li>
-        </ul>
-      </div>
+      <NoteItems notes={notes} onNoteClick={(id) => navigate(`/note/${id}`)} />
     </div>
   );
 }
