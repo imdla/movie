@@ -244,8 +244,7 @@ form button:hover {
 }
 
 /* notfound */
-.notfound img,
-.myPageMovie img {
+.notfound img {
   width: 200px;
 }
 

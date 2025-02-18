@@ -1,0 +1,30 @@
+div.myPageMovie {
+  min-height: calc(100vh - 80px - 177px);
+}
+
+.myPageMovie img {
+  width: 200px;
+}
+
+.myPageMovie .tabBtn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.myPageMovie .tabBtn li button {
+  background-color: transparent;
+  font-size: 18px;
+}
+
+.myPageMovie .tabBtn li button:active,
+.myPageMovie .tabBtn li button:focus {
+  outline: none;
+}
+
+.myPageMovie .tabCon {
+  width: 100%;
+  border-top: 1px solid #999;
+}

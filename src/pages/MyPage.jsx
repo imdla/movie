@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import movieApi from "../api/movieApi";
 import { imgUrl } from "../utills/imgUrl";
 
+import styles from "../css/MyPage.module.css";
 import EmptyMyPage from "../components/SavedEmpty";
 
 export default function MyPage() {
@@ -58,23 +59,30 @@ export default function MyPage() {
     }
   }
 
+  const saveColor = isActiveSave ? "#fff" : "#999";
+  const notationColor = isActiveSave ? "#999" : "#fff";
   return (
-    <div className="container myPageMovie">
-      <ul>
+    <div className={`container ${styles.myPageMovie}`}>
+      <ul className={styles.tabBtn}>
         <li>
           <Link>
-            <button onClick={handleClick}>저장</button>
+            <button style={{ color: saveColor }} onClick={handleClick}>
+              저장
+            </button>
           </Link>
         </li>
         <li>
           <Link>
-            <button onClick={handleClick}>기록</button>
+            <button style={{ color: notationColor }} onClick={handleClick}>
+              기록
+            </button>
           </Link>
         </li>
       </ul>
-      <div>
+
+      <div className={styles.tabCon}>
         {isActiveSave ? (
-          <ul className="ulTag movieList">
+          <ul className={`ulTag movieList`}>
             {movieSaveItems[0] ? movieSaveItems : <EmptyMyPage></EmptyMyPage>}
           </ul>
         ) : (
