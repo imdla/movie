@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function NoteItems({ notes, onMemoClick }) {
+function NoteItems({ notes, onNoteClick }) {
   return (
     <div className="note-items">
       {notes.map((note) => (

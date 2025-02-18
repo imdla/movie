@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import NoteCreateForm from "./NoteCreateForm";
 import NoteItems from "./NoteItems";
-import { useNavigate } from "react-router-dom";
+import "../css/NoteEditor.css";
 
 export default function MyPageNotation() {
   const navigate = useNavigate();
