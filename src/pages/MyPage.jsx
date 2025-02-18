@@ -11,6 +11,7 @@ import EmptyMyPage from "../components/SavedEmpty";
 export default function MyPage() {
   const navigate = useNavigate();
   const [movieItems, setMovieItems] = useState([]);
+  const [isActiveSave, setIsActiveSave] = useState(true);
   const { isLoggedIn, userName } = useSelector((state) => state.auth.user);
   const { saveMovieId } = useSelector((state) => state.movieSave);
 
@@ -49,13 +50,36 @@ export default function MyPage() {
     );
   });
 
+  function handleClick(e) {
+    if (e.target.innerHTML === "저장") {
+      setIsActiveSave(true);
+    } else {
+      setIsActiveSave(false);
+    }
+  }
+
   return (
     <div className="container myPageMovie">
-      <h2>{userName}님의 Favorite Movie Page</h2>
+      <ul>
+        <li>
+          <Link>
+            <button onClick={handleClick}>저장</button>
+          </Link>
+        </li>
+        <li>
+          <Link>
+            <button onClick={handleClick}>기록</button>
+          </Link>
+        </li>
+      </ul>
       <div>
-        <ul className="ulTag movieList">
-          {movieSaveItems[0] ? movieSaveItems : <EmptyMyPage></EmptyMyPage>}
-        </ul>
+        {isActiveSave ? (
+          <ul className="ulTag movieList">
+            {movieSaveItems[0] ? movieSaveItems : <EmptyMyPage></EmptyMyPage>}
+          </ul>
+        ) : (
+          <p>hello</p>
+        )}
       </div>
     </div>
   );
