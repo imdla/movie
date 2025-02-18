@@ -8,6 +8,7 @@ import { imgUrl } from "../utills/imgUrl";
 
 import styles from "../css/MyPage.module.css";
 import EmptyMyPage from "../components/SavedEmpty";
+import MyPageNotation from "../components/MyPageNotation";
 
 export default function MyPage() {
   const navigate = useNavigate();
@@ -86,7 +87,7 @@ export default function MyPage() {
             {movieSaveItems[0] ? movieSaveItems : <EmptyMyPage></EmptyMyPage>}
           </ul>
         ) : (
-          <p>hello</p>
+          <MyPageNotation />
         )}
       </div>
     </div>
