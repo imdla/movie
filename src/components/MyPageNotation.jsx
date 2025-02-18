@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import NoteCreateForm from "./NoteCreateForm";
 
 export default function MyPageNotation() {
   const [isCreating, setIsCreating] = useState(false);
@@ -7,7 +8,16 @@ export default function MyPageNotation() {
     <div>
       <button onClick={() => setIsCreating(true)}>+</button>
 
-      
+      {isCreating && (
+        <NoteCreateForm
+          title={title}
+          content={content}
+          onTitleChange={setTitle}
+          onContentChange={setContent}
+          onSubmit={handleSubmit}
+          onCancel={() => setIsCreating(false)}
+        />
+      )}
 
       <div>
         <ul>
