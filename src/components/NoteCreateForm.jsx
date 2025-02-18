@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import MemoEditor from "./MemoEditor";
+import NoteEditor from "./NoteEditor";
 
 function NoteCreateForm({
   title,
