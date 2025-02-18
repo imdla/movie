@@ -6,7 +6,7 @@ import Highlight from "@tiptap/extension-highlight";
 import CodeBlockLowlight from "@tiptap/extension-code-block-lowlight";
 import { common, createLowlight } from "lowlight";
 import PropTypes from "prop-types";
-// import "../styles/MemoEditor.css";
+import "../styles/NoteEditor.css";
 import EditorToolbar from "./EditorToolbar";
 
 // lowlight 인스턴스 생성
