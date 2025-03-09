@@ -4,7 +4,7 @@ React의 숙련도 향상을 위해 진행한 TMDB API 활용한 영화 추천 �
 
 <br/>
 
-![Main Image](./public/movie_main.png)
+![Main Image](https://github.com/user-attachments/assets/25148e3f-bdad-458a-84f0-ecb346c7e7d8)
 
 <br/>
 
@@ -47,4 +47,4 @@ React의 숙련도 향상을 위해 진행한 TMDB API 활용한 영화 추천 �
 
 ## Wireframe
 
-![wireframe](./public/movie_frame.jpg)
+![wireframe](https://github.com/user-attachments/assets/eff302bf-cf7e-4661-b0d9-e71b4d61c232)
