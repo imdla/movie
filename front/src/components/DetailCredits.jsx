@@ -2,8 +2,8 @@ import React, { useRef } from "react";
 import movieApi from "../api/movieApi";
 import useMovieApi from "../hooks/useMovieApi";
 
-import { imgUrl } from "../utills/imgUrl";
-import { reviewBasicImgUrl } from "../utills/movieUtils";
+import { imgUrl } from "../utils/imgUrl";
+import { reviewBasicImgUrl } from "../utils/movieUtils";
 import styles from "../css/DetailCredits.module.css";
 
 import Loading from "../pages/Loading";

@@ -1,5 +1,5 @@
 import React from "react";
-import { errorImgUrl } from "../utills/movieUtils";
+import { errorImgUrl } from "../utils/movieUtils";
 import { useNavigate } from "react-router-dom";
 
 export default function EmptyMyPage() {

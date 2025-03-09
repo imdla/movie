@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { movieTypeList, movieTypeListKr } from "../utills/movieUtils";
-import { typeAmount } from "../utills/movieUtils";
+import { movieTypeList, movieTypeListKr } from "../utils/movieUtils";
+import { typeAmount } from "../utils/movieUtils";
 
 import MovieListItem from "../components/MovieListItem";
 import MovieSlide from "../components/MovieSlide";

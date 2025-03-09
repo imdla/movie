@@ -4,7 +4,7 @@ import {
   movieTypeList,
   movieTypeListKr,
   typeListAmount,
-} from "../utills/movieUtils";
+} from "../utils/movieUtils";
 import MovieItem from "../components/MovieListItem";
 
 export default function MovieType() {

@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { saved, remove } from "../store/slices/movieSaveSlice";
 import movieApi from "../api/movieApi";
 import useMovieApi from "../hooks/useMovieApi";
-import { imgUrl } from "../utills/imgUrl";
+import { imgUrl } from "../utils/imgUrl";
 
 import DetailReview from "../components/DetailReview";
 import DetailCredits from "../components/DetailCredits";

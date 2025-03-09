@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
 import movieApi from "../api/movieApi";
-import { imgUrl } from "../utills/imgUrl";
+import { imgUrl } from "../utils/imgUrl";
 
 import styles from "../css/MyPage.module.css";
 import EmptyMyPage from "../components/SavedEmpty";

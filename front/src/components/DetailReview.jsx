@@ -2,8 +2,8 @@ import { useParams } from "react-router-dom";
 
 import movieApi from "../api/movieApi";
 import useMovieApi from "../hooks/useMovieApi";
-import { imgUrl } from "../utills/imgUrl";
-import { reviewBasicImgUrl } from "../utills/movieUtils";
+import { imgUrl } from "../utils/imgUrl";
+import { reviewBasicImgUrl } from "../utils/movieUtils";
 
 import Loading from "../pages/Loading";
 import NotFound from "../pages/NotFound";

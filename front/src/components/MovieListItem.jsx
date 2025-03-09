@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import movieApi from "../api/movieApi";
 import useMovieApi from "../hooks/useMovieApi";
-import { imgUrl } from "../utills/imgUrl";
+import { imgUrl } from "../utils/imgUrl";
 
 import Loading from "../pages/Loading";
 import NotFound from "../pages/NotFound";

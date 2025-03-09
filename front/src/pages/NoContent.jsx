@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { errorImgUrl } from "../utills/movieUtils";
+import { errorImgUrl } from "../utils/movieUtils";
 
 export default function NoContent({ inputValue }) {
   const navigate = useNavigate();

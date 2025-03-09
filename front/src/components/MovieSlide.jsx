@@ -4,7 +4,7 @@ import styles from "../css/MovieSlide.Module.css";
 
 import useMovieApi from "../hooks/useMovieApi";
 import movieApi from "../api/movieApi";
-import { imgUrl } from "../utills/imgUrl";
+import { imgUrl } from "../utils/imgUrl";
 
 import Loading from "../pages/Loading";
 import NotFound from "../pages/NotFound";

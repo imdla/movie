@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
-import {
-  popcornImgUrl,
-} from "../utills/movieUtils";
+import { popcornImgUrl } from "../utils/movieUtils";
 
 export default function Loading() {
-
   return (
     <div className="loading flex-center">
       <img src={popcornImgUrl} alt="" />
