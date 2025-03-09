@@ -5,9 +5,7 @@ services:
     volumes:
       - back-dev-volume:/var/lib/mysql
     ports:
-      - 3306:3306
-    env_file:
-      - .env
+      - 3307:3306
 
 volumes:
-  db-dev-volume:
+  back-dev-volume:
