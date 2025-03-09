@@ -261,12 +261,17 @@ header {
 }
 
 header .container {
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 header > div.container {
   min-height: auto;
+}
+
+header .ulTag {
+  margin: 0;
 }
 
 header .logo {
