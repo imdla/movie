@@ -12,7 +12,7 @@ export default function Header() {
         <div className="flex-center">
           <Link to={"/"}>
             <div className="text-center logo">
-              <img src="../public/logo.png" alt="logo" />
+              <img src="/logo.png" alt="logo" />
             </div>
           </Link>
 
