@@ -117,3 +117,34 @@
 .scrollBtn:hover {
   opacity: 0.5;
 }
+
+@media (max-width: 640px) {
+  .movieSlide li a .content {
+    position: absolute;
+    top: 180px;
+    left: 0;
+    width: 90vw;
+    flex-wrap: wrap;
+  }
+
+  .movieSlide li a .content > p {
+    display: none;
+  }
+
+  .movieSlide li a::after {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0.95) 30%,
+      transparent
+    );
+  }
+
+  .left {
+    left: 40%;
+  }
+
+  .right {
+    right: 40%;
+  }
+}

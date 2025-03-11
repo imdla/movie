@@ -243,6 +243,12 @@ form button:hover {
   }
 }
 
+@media (max-width: 640px) {
+  #signup form {
+    height: 55vh;
+  }
+}
+
 /* notfound */
 .notfound img {
   width: 200px;
@@ -488,6 +494,13 @@ header .search i {
   justify-content: center;
 }
 
+@media (max-width: 640px) {
+  .movieType img {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
 /* movieDetail */
 .movieDetail {
   position: relative;
@@ -498,6 +511,7 @@ header .search i {
   height: calc(100vh - 80px);
   object-fit: cover;
   border-radius: 0;
+  margin-right: 0;
 }
 
 .movieDetail .logo {
@@ -519,6 +533,10 @@ header .search i {
 
 .detailGenre li {
   position: relative;
+}
+
+.movieDetail .ulTag p {
+  height: auto;
 }
 
 .detailGenre li::before {
@@ -567,6 +585,12 @@ i span {
   color: #aeaeae;
   white-space: nowrap;
   overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .movieReview p {
+    width: 50vw;
+  }
 }
 
 /* movieGenre */
