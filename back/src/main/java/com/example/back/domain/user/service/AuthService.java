@@ -5,6 +5,7 @@ import com.example.back.domain.user.request.SignupRequestDto;
 import com.example.back.domain.user.response.SignupResponseDto;
 import com.example.back.domain.user.User;
 import com.example.back.domain.user.repository.UserRepository;
+import com.example.back.global.security.JwtTokenProvider;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
