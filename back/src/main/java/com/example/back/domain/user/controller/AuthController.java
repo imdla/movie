@@ -2,8 +2,11 @@ package com.example.back.domain.user.controller;
 
 import com.example.back.domain.user.SignupRequestDto;
 import com.example.back.domain.user.service.AuthService;
+import com.example.back.global.Response.ApiResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +20,8 @@ public class AuthController {
 
     @PostMapping("/signup")
     public type signup(@Valid @RequestBody SignupRequestDto requestDto) {
-        return;
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body(ApiResponse.ok(authService.signup(requestDto)));
     }
 }
