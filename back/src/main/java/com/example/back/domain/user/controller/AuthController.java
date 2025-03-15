@@ -1,6 +1,6 @@
 package com.example.back.domain.user.controller;
 
-import com.example.back.domain.user.SignupRequestDto;
+import com.example.back.domain.user.request.SignupRequestDto;
 import com.example.back.domain.user.service.AuthService;
 import com.example.back.global.Response.ApiResponse;
 import jakarta.validation.Valid;
@@ -24,4 +24,7 @@ public class AuthController {
                 .status(HttpStatus.CREATED)
                 .body(ApiResponse.ok(authService.signup(requestDto)));
     }
+
+    @PostMapping("/login")
+    public type login(@Valid @RequestBody )
 }

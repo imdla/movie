@@ -1,7 +1,7 @@
 package com.example.back.domain.user.service;
 
-import com.example.back.domain.user.SignupRequestDto;
-import com.example.back.domain.user.SignupResponseDto;
+import com.example.back.domain.user.request.SignupRequestDto;
+import com.example.back.domain.user.response.SignupResponseDto;
 import com.example.back.domain.user.User;
 import com.example.back.domain.user.repository.UserRepository;
 import jakarta.transaction.Transactional;

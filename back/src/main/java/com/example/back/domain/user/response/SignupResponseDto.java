@@ -1,5 +1,7 @@
-package com.example.back.domain.user;
+package com.example.back.domain.user.response;
 
+import com.example.back.domain.user.request.SignupRequestDto;
+import com.example.back.domain.user.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

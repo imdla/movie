@@ -1,5 +1,6 @@
-package com.example.back.domain.user;
+package com.example.back.domain.user.request;
 
+import com.example.back.domain.user.User;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
