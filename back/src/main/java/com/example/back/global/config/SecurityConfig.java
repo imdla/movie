@@ -1,6 +1,7 @@
 package com.example.back.global.config;
 
 import com.example.back.global.security.JwtAuthenticationFilter;
+import com.example.back.global.security.handler.CustomAccessDeniedHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
