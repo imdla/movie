@@ -52,4 +52,13 @@ public class JwtTokenProvider {
             return false;
         }
     }
+
+    public String getUsername(String token) {
+        return Jwts.parserBuilder()
+                .setSigningKey(Keys.hmacShaKeyFor(secretKey.getBytes()))
+                .build()
+                .parseClaimsJwt(token)
+                .getBody()
+                .getSubject();
+    }
 }
