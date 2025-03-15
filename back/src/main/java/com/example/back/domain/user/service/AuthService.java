@@ -1,11 +1,16 @@
 package com.example.back.domain.user.service;
 
+import com.example.back.domain.user.request.LoginRequestDto;
 import com.example.back.domain.user.request.SignupRequestDto;
 import com.example.back.domain.user.response.SignupResponseDto;
 import com.example.back.domain.user.User;
 import com.example.back.domain.user.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +20,8 @@ public class AuthService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final AuthenticationManager authenticationManager;
+    private final JwtTokenProvider jwtTokenProvider;
 
     @Transactional
     public SignupRequestDto signup(SignupRequestDto requestDto) {
@@ -31,5 +38,19 @@ public class AuthService {
         User user = requestDto.toEntity(encodePassword);
         return SignupResponseDto.from(userRepository.save(user));
 
+    }
+
+    @Transactional
+    public type login(LoginRequestDto requestDto) {
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        requestDto.getUsername(),
+                        requestDto.getPassword()
+                )
+        );
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        String jwt = jwtTokenProvider.createToken(authentication);
+
+        return new TokenResponseDto(jwt);
     }
 }
