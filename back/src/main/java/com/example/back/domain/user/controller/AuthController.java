@@ -1,5 +1,6 @@
 package com.example.back.domain.user.controller;
 
+import com.example.back.domain.user.SignupRequestDto;
 import com.example.back.domain.user.service.AuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -15,5 +16,7 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/signup")
-    public type signup(@Valid @RequestBody )
+    public type signup(@Valid @RequestBody SignupRequestDto requestDto) {
+        return;
+    }
 }
