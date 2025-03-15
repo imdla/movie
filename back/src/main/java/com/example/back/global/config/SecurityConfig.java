@@ -2,6 +2,7 @@ package com.example.back.global.config;
 
 import com.example.back.global.security.JwtAuthenticationFilter;
 import com.example.back.global.security.handler.CustomAccessDeniedHandler;
+import com.example.back.global.security.handler.JwtAuthenticationEntryPoint;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +24,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfig {
 
     private final CustomAccessDeniedHandler accessDeniedHandler;
-    private final JwtAuthenricationEntryPoint jwtAuthenricationEntryPoint;
+    private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
     @Bean
@@ -43,7 +44,7 @@ public class SecurityConfig {
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .exceptionHandling(exception -> exception
                         .accessDeniedHandler(accessDeniedHandler)
-                        .authenticationEntryPoint(jwtAuthenricationEntryPoint)
+                        .authenticationEntryPoint(jwtAuthenticationEntryPoint)
                 );
         return http.build();
     }
