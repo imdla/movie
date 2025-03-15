@@ -5,6 +5,7 @@ import com.example.back.domain.user.request.SignupRequestDto;
 import com.example.back.domain.user.response.SignupResponseDto;
 import com.example.back.domain.user.User;
 import com.example.back.domain.user.repository.UserRepository;
+import com.example.back.domain.user.response.TokenResponseDto;
 import com.example.back.global.security.JwtTokenProvider;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -42,7 +43,7 @@ public class AuthService {
     }
 
     @Transactional
-    public type login(LoginRequestDto requestDto) {
+    public TokenResponseDto login(LoginRequestDto requestDto) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         requestDto.getUsername(),

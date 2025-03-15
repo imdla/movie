@@ -2,6 +2,7 @@ package com.example.back.domain.user.controller;
 
 import com.example.back.domain.user.request.LoginRequestDto;
 import com.example.back.domain.user.request.SignupRequestDto;
+import com.example.back.domain.user.response.TokenResponseDto;
 import com.example.back.domain.user.service.AuthService;
 import com.example.back.global.Response.ApiResponse;
 import jakarta.validation.Valid;
@@ -27,7 +28,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public type login(@Valid @RequestBody LoginRequestDto requestDto) {
+    public ResponseEntity<ApiResponse<TokenResponseDto>> login(@Valid @RequestBody LoginRequestDto requestDto) {
         return ResponseEntity.ok(ApiResponse.ok(
                 authService.login(requestDto)
         ));
