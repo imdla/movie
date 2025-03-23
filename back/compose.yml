@@ -1,0 +1,13 @@
+services:
+  db-dev:
+    container_name: back-dev-container
+    image: mysql:8.0
+    volumes:
+      - back-dev-volume:/var/lib/mysql
+    ports:
+      - 3307:3306
+    env_file:
+      - .env
+
+volumes:
+  back-dev-volume:
